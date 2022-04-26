@@ -11,29 +11,55 @@ class FormTableViewController: UITableViewController {
     
     @IBOutlet weak var recipeFormTableView: UITableView!
     
+    @IBOutlet weak var recipeNameTextField: UITextField!
+    
     @IBOutlet weak var recipeImageView: UIImageView!
     
     @IBOutlet weak var recipeIngredientsTextView: UITextView!
     @IBOutlet weak var recipeIngredientsTextViewHC: NSLayoutConstraint!
     
+    @IBOutlet weak var recipeDirectionsTextView: UITextView!
+    
+    var recipeTitle = ""
+    var image: UIImage?
+    var ingredients = ""
+    var directions = ""
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
+        recipeNameTextField.borderStyle = UITextField.BorderStyle.roundedRect
+        recipeNameTextField.delegate = self
         
+        recipeImageView.layer.borderWidth = 1
+        recipeImageView.layer.borderColor = UIColor(named: "TF")?.cgColor
+        recipeImageView.layer.cornerRadius = 5
+        recipeImageView.image = UIImage(named: "emptyState")
+        
+        recipeIngredientsTextView.layer.borderWidth = 1
+        recipeIngredientsTextView.layer.borderColor = UIColor(named: "TF")?.cgColor
+        recipeIngredientsTextView.layer.cornerRadius = 5
+        self.recipeIngredientsTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone1(sender:)))
+        
+        recipeDirectionsTextView.layer.borderWidth = 1
+        recipeDirectionsTextView.layer.borderColor = UIColor(named: "TF")?.cgColor
+        recipeDirectionsTextView.layer.cornerRadius = 5
+        self.recipeDirectionsTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone2(sender:)))
     }
     
-    func textViewDidChange(_ textView: UITextView) {
-
-        let fixedWidth = recipeIngredientsTextView.frame.size.width
-        recipeIngredientsTextView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-        let newSize = recipeIngredientsTextView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-        var newFrame = recipeIngredientsTextView.frame
-        newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
-        recipeIngredientsTextView.frame = newFrame;
-        recipeIngredientsTextViewHC.constant = newFrame.size.height
-        recipeFormTableView.beginUpdates()
-        recipeFormTableView.endUpdates()
+    @objc func tapDone1(sender: Any) {
+        
+        self.view.endEditing(true)
+        
+        ingredients = recipeIngredientsTextView.text ?? ""
+        print(ingredients)
+    }
+    
+    @objc func tapDone2(sender: Any) {
+        
+        self.view.endEditing(true)
+        print("directions")
     }
     
     // MARK: - Source Image
@@ -61,13 +87,6 @@ class FormTableViewController: UITableViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
-    
-    // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
 }
 
 extension FormTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -91,6 +110,7 @@ extension FormTableViewController: UIImagePickerControllerDelegate, UINavigation
         
         if let selectedImage = info[.originalImage] as? UIImage {
             recipeImageView.image = selectedImage
+            image = recipeImageView.image
         } else {
             print("Image not found")
         }
@@ -100,5 +120,17 @@ extension FormTableViewController: UIImagePickerControllerDelegate, UINavigation
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension FormTableViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        recipeNameTextField.resignFirstResponder()
+        
+        recipeTitle = recipeNameTextField.text ?? ""
+        print(recipeTitle)
+        
+        return true
     }
 }
