@@ -9,23 +9,31 @@
 /* Begin PBXBuildFile section */
 		DB06B0162817B54F00AAD7B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06B0152817B54F00AAD7B7 /* AppDelegate.swift */; };
 		DB06B0182817B54F00AAD7B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06B0172817B54F00AAD7B7 /* SceneDelegate.swift */; };
-		DB06B01A2817B54F00AAD7B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06B0192817B54F00AAD7B7 /* ViewController.swift */; };
+		DB06B01A2817B54F00AAD7B7 /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06B0192817B54F00AAD7B7 /* RecipeListViewController.swift */; };
 		DB06B01D2817B54F00AAD7B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB06B01B2817B54F00AAD7B7 /* Main.storyboard */; };
 		DB06B0202817B54F00AAD7B7 /* NanoChallenge01.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB06B01E2817B54F00AAD7B7 /* NanoChallenge01.xcdatamodeld */; };
 		DB06B0222817B55000AAD7B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB06B0212817B55000AAD7B7 /* Assets.xcassets */; };
 		DB06B0252817B55000AAD7B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB06B0232817B55000AAD7B7 /* LaunchScreen.storyboard */; };
+		DB06B02D2817D4AA00AAD7B7 /* recipeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06B02C2817D4AA00AAD7B7 /* recipeViewCell.swift */; };
+		DB06B0312817E79700AAD7B7 /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06B0302817E79700AAD7B7 /* RecipeDetailsViewController.swift */; };
+		DB06B0332817E9D400AAD7B7 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06B0322817E9D400AAD7B7 /* Recipe.swift */; };
+		DB06B0352817E9FB00AAD7B7 /* DataSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06B0342817E9FB00AAD7B7 /* DataSeeder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DB06B0122817B54F00AAD7B7 /* NanoChallenge01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanoChallenge01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB06B0152817B54F00AAD7B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB06B0172817B54F00AAD7B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DB06B0192817B54F00AAD7B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DB06B0192817B54F00AAD7B7 /* RecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewController.swift; sourceTree = "<group>"; };
 		DB06B01C2817B54F00AAD7B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB06B01F2817B54F00AAD7B7 /* NanoChallenge01.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NanoChallenge01.xcdatamodel; sourceTree = "<group>"; };
 		DB06B0212817B55000AAD7B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB06B0242817B55000AAD7B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB06B0262817B55000AAD7B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB06B02C2817D4AA00AAD7B7 /* recipeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recipeViewCell.swift; sourceTree = "<group>"; };
+		DB06B0302817E79700AAD7B7 /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
+		DB06B0322817E9D400AAD7B7 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		DB06B0342817E9FB00AAD7B7 /* DataSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSeeder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +68,26 @@
 			children = (
 				DB06B0152817B54F00AAD7B7 /* AppDelegate.swift */,
 				DB06B0172817B54F00AAD7B7 /* SceneDelegate.swift */,
-				DB06B0192817B54F00AAD7B7 /* ViewController.swift */,
+				DB06B0362817EA0300AAD7B7 /* Data */,
+				DB06B0192817B54F00AAD7B7 /* RecipeListViewController.swift */,
+				DB06B02C2817D4AA00AAD7B7 /* recipeViewCell.swift */,
+				DB06B0302817E79700AAD7B7 /* RecipeDetailsViewController.swift */,
 				DB06B01B2817B54F00AAD7B7 /* Main.storyboard */,
-				DB06B0212817B55000AAD7B7 /* Assets.xcassets */,
 				DB06B0232817B55000AAD7B7 /* LaunchScreen.storyboard */,
+				DB06B0212817B55000AAD7B7 /* Assets.xcassets */,
 				DB06B0262817B55000AAD7B7 /* Info.plist */,
-				DB06B01E2817B54F00AAD7B7 /* NanoChallenge01.xcdatamodeld */,
 			);
 			path = NanoChallenge01;
+			sourceTree = "<group>";
+		};
+		DB06B0362817EA0300AAD7B7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DB06B0322817E9D400AAD7B7 /* Recipe.swift */,
+				DB06B0342817E9FB00AAD7B7 /* DataSeeder.swift */,
+				DB06B01E2817B54F00AAD7B7 /* NanoChallenge01.xcdatamodeld */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +162,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB06B0202817B54F00AAD7B7 /* NanoChallenge01.xcdatamodeld in Sources */,
-				DB06B01A2817B54F00AAD7B7 /* ViewController.swift in Sources */,
+				DB06B0312817E79700AAD7B7 /* RecipeDetailsViewController.swift in Sources */,
+				DB06B0332817E9D400AAD7B7 /* Recipe.swift in Sources */,
+				DB06B01A2817B54F00AAD7B7 /* RecipeListViewController.swift in Sources */,
 				DB06B0162817B54F00AAD7B7 /* AppDelegate.swift in Sources */,
+				DB06B0352817E9FB00AAD7B7 /* DataSeeder.swift in Sources */,
 				DB06B0182817B54F00AAD7B7 /* SceneDelegate.swift in Sources */,
+				DB06B02D2817D4AA00AAD7B7 /* recipeViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
