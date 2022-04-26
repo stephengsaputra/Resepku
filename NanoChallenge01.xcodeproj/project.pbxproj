@@ -18,6 +18,8 @@
 		DB06B0312817E79700AAD7B7 /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06B0302817E79700AAD7B7 /* RecipeDetailsViewController.swift */; };
 		DB06B0332817E9D400AAD7B7 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06B0322817E9D400AAD7B7 /* Recipe.swift */; };
 		DB06B0352817E9FB00AAD7B7 /* DataSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06B0342817E9FB00AAD7B7 /* DataSeeder.swift */; };
+		DBEB75732818282B00D0E481 /* AddRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEB75722818282B00D0E481 /* AddRecipeViewController.swift */; };
+		DBEB75752818287900D0E481 /* FormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEB75742818287900D0E481 /* FormTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		DB06B0302817E79700AAD7B7 /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
 		DB06B0322817E9D400AAD7B7 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		DB06B0342817E9FB00AAD7B7 /* DataSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSeeder.swift; sourceTree = "<group>"; };
+		DBEB75722818282B00D0E481 /* AddRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeViewController.swift; sourceTree = "<group>"; };
+		DBEB75742818287900D0E481 /* FormTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				DB06B0192817B54F00AAD7B7 /* RecipeListViewController.swift */,
 				DB06B02C2817D4AA00AAD7B7 /* recipeViewCell.swift */,
 				DB06B0302817E79700AAD7B7 /* RecipeDetailsViewController.swift */,
+				DBEB75722818282B00D0E481 /* AddRecipeViewController.swift */,
+				DBEB75742818287900D0E481 /* FormTableViewController.swift */,
 				DB06B01B2817B54F00AAD7B7 /* Main.storyboard */,
 				DB06B0232817B55000AAD7B7 /* LaunchScreen.storyboard */,
 				DB06B0212817B55000AAD7B7 /* Assets.xcassets */,
@@ -161,6 +167,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBEB75732818282B00D0E481 /* AddRecipeViewController.swift in Sources */,
+				DBEB75752818287900D0E481 /* FormTableViewController.swift in Sources */,
 				DB06B0202817B54F00AAD7B7 /* NanoChallenge01.xcdatamodeld in Sources */,
 				DB06B0312817E79700AAD7B7 /* RecipeDetailsViewController.swift in Sources */,
 				DB06B0332817E9D400AAD7B7 /* Recipe.swift in Sources */,
