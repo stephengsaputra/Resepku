@@ -75,7 +75,6 @@
 				DB06B0152817B54F00AAD7B7 /* AppDelegate.swift */,
 				DB06B0172817B54F00AAD7B7 /* SceneDelegate.swift */,
 				DB06B0362817EA0300AAD7B7 /* Data */,
-				DB06B0192817B54F00AAD7B7 /* RecipeListViewController.swift */,
 				DB06B02C2817D4AA00AAD7B7 /* recipeViewCell.swift */,
 				DBD5FD1128186EBE002052DF /* View Controllers */,
 				DBD5FD13281872A3002052DF /* Extension */,
@@ -100,6 +99,7 @@
 		DBD5FD1128186EBE002052DF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DB06B0192817B54F00AAD7B7 /* RecipeListViewController.swift */,
 				DB06B0302817E79700AAD7B7 /* RecipeDetailsViewController.swift */,
 				DBEB75722818282B00D0E481 /* AddRecipeViewController.swift */,
 				DBEB75742818287900D0E481 /* FormTableViewController.swift */,

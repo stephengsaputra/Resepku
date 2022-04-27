@@ -8,23 +8,21 @@
 import UIKit
 
 class RecipeDetailsViewController: UIViewController {
-
-    @IBOutlet weak var recipeImage: UIImage!
+    
+    @IBOutlet weak var recipeImageView: UIImageView!
+    @IBOutlet weak var recipeTitleLabel: UILabel!
+    @IBOutlet weak var recipeIngredientsTextView: UITextView!
+    
+    var recipeTitle: String = ""
+    var recipeImage: UIImage!
+    var recipeIngredients: String = ""
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        recipeTitleLabel.text = recipeTitle
+        recipeImageView.image = recipeImage
+        recipeIngredientsTextView.text = recipeIngredients
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

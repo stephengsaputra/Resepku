@@ -13,23 +13,25 @@ class RecipeListViewController: UIViewController {
     
     var rowSelected: Int?
     
+    var recipes: [Recipe] = []
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        recipes = DataSeeder().generateRecipes()
         
         recipeCollectionView.delegate = self
         recipeCollectionView.dataSource = self
     }
     
-    @IBAction func unwindToRecipeListView(_ sender: UIStoryboardSegue) {
-        
-        
-    }
+    @IBAction func unwindToRecipeListView(_ sender: UIStoryboardSegue) { }
 }
 
 extension RecipeListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return recipes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -37,19 +39,19 @@ extension RecipeListViewController: UICollectionViewDelegate, UICollectionViewDa
         let cell = recipeCollectionView.dequeueReusableCell(
             withReuseIdentifier: "recipeViewCell",
             for: indexPath) as! recipeViewCell
-        cell.recipeImage.image = UIImage(named: "9")
-        cell.recipeTitle.text = "Test"
+        cell.recipeImage.image = recipes[indexPath.row].image
+        cell.recipeTitle.text = recipes[indexPath.row].recipeTitle
         
         cell.contentView.layer.cornerRadius = 20
         cell.contentView.layer.masksToBounds = true
-
+        
         cell.layer.shadowColor = UIColor(
             red: 0.11,
             green: 0.11,
             blue: 0.11,
             alpha: 0.15).cgColor
         cell.layer.shadowOffset = CGSize(width: 0, height: 0)
-        cell.layer.shadowRadius = 2.0
+        cell.layer.shadowRadius = 5
         cell.layer.shadowOpacity = 1.0
         cell.layer.masksToBounds = false
         
@@ -60,5 +62,16 @@ extension RecipeListViewController: UICollectionViewDelegate, UICollectionViewDa
         
         rowSelected = indexPath.row
         performSegue(withIdentifier: "toRecipeDetails", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let selectedRow  = rowSelected {
+            if let destination = segue.destination as? RecipeDetailsViewController {
+                destination.recipeTitle = recipes[selectedRow].recipeTitle ?? ""
+                destination.recipeImage = recipes[selectedRow].image ?? UIImage()
+                destination.recipeIngredients = recipes[selectedRow].ingredients ?? ""
+            }
+        }
     }
 }

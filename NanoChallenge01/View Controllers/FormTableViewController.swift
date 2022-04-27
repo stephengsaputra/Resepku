@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol FormDelegate: AnyObject {
+    
+    func enableAddButton()
+    func disableAddButtton()
+}
+
 class FormTableViewController: UITableViewController {
     
     @IBOutlet weak var recipeFormTableView: UITableView!
@@ -24,6 +30,11 @@ class FormTableViewController: UITableViewController {
     var image: UIImage?
     var ingredients = ""
     var directions = ""
+    
+    // Data Model
+    var recipeModel: Recipe = Recipe()
+    
+    var delegate: FormDelegate?
     
     override func viewDidLoad() {
         
@@ -51,15 +62,34 @@ class FormTableViewController: UITableViewController {
     @objc func tapDone1(sender: Any) {
         
         self.view.endEditing(true)
-        
-        ingredients = recipeIngredientsTextView.text ?? ""
-        print(ingredients)
+        recipeModel.ingredients = recipeIngredientsTextView.text
+        if recipeIngredientsTextView.text == "" {
+            recipeModel.ingredients = nil
+        }
+        validateRecipeModel()
     }
     
     @objc func tapDone2(sender: Any) {
         
         self.view.endEditing(true)
-        print("directions")
+        recipeModel.directions = recipeDirectionsTextView.text
+        if recipeDirectionsTextView.text == "" {
+            recipeModel.directions = nil
+        }
+        validateRecipeModel()
+    }
+    
+    func validateRecipeModel() {
+        
+        if recipeModel.recipeTitle != nil &&
+            recipeModel.image != nil &&
+            recipeModel.ingredients != nil &&
+            recipeModel.directions != nil
+        {
+            delegate?.enableAddButton()
+        } else {
+            delegate?.disableAddButtton()
+        }
     }
     
     // MARK: - Source Image
@@ -110,7 +140,8 @@ extension FormTableViewController: UIImagePickerControllerDelegate, UINavigation
         
         if let selectedImage = info[.originalImage] as? UIImage {
             recipeImageView.image = selectedImage
-            image = recipeImageView.image
+            recipeModel.image = recipeImageView.image
+            validateRecipeModel()
         } else {
             print("Image not found")
         }
@@ -126,10 +157,13 @@ extension FormTableViewController: UIImagePickerControllerDelegate, UINavigation
 extension FormTableViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        recipeNameTextField.resignFirstResponder()
         
-        recipeTitle = recipeNameTextField.text ?? ""
-        print(recipeTitle)
+        recipeNameTextField.resignFirstResponder()
+        recipeModel.recipeTitle = recipeNameTextField.text
+        if recipeNameTextField.text == "" {
+            recipeModel.recipeTitle = nil
+        }
+        validateRecipeModel()
         
         return true
     }

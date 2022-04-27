@@ -10,6 +10,8 @@ import UIKit
 
 struct Recipe {
     
-    var recipeTitle: String
-    var image: UIImage
+    var recipeTitle: String?
+    var image: UIImage?
+    var ingredients: String?
+    var directions: String?
 }
