@@ -135,6 +135,7 @@ class FormTableViewController: UITableViewController {
         
         let cancelButton = UIAlertAction(title: "Cancel", style: .cancel)
         
+        alert.view.tintColor = UIColor(named: "main")
         alert.addAction(cameraButton)
         alert.addAction(galleryButton)
         alert.addAction(cancelButton)

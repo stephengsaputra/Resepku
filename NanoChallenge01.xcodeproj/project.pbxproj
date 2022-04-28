@@ -17,7 +17,6 @@
 		DB06B02D2817D4AA00AAD7B7 /* recipeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06B02C2817D4AA00AAD7B7 /* recipeViewCell.swift */; };
 		DB06B0312817E79700AAD7B7 /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06B0302817E79700AAD7B7 /* RecipeDetailsViewController.swift */; };
 		DB06B0332817E9D400AAD7B7 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06B0322817E9D400AAD7B7 /* Recipe.swift */; };
-		DB06B0352817E9FB00AAD7B7 /* DataSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06B0342817E9FB00AAD7B7 /* DataSeeder.swift */; };
 		DBD5FD15281872BE002052DF /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD5FD14281872BE002052DF /* UITextView.swift */; };
 		DBEB75732818282B00D0E481 /* AddRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEB75722818282B00D0E481 /* AddRecipeViewController.swift */; };
 		DBEB75752818287900D0E481 /* FormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEB75742818287900D0E481 /* FormTableViewController.swift */; };
@@ -36,7 +35,6 @@
 		DB06B02C2817D4AA00AAD7B7 /* recipeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recipeViewCell.swift; sourceTree = "<group>"; };
 		DB06B0302817E79700AAD7B7 /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
 		DB06B0322817E9D400AAD7B7 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
-		DB06B0342817E9FB00AAD7B7 /* DataSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSeeder.swift; sourceTree = "<group>"; };
 		DBD5FD14281872BE002052DF /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		DBEB75722818282B00D0E481 /* AddRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeViewController.swift; sourceTree = "<group>"; };
 		DBEB75742818287900D0E481 /* FormTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewController.swift; sourceTree = "<group>"; };
@@ -90,7 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				DB06B0322817E9D400AAD7B7 /* Recipe.swift */,
-				DB06B0342817E9FB00AAD7B7 /* DataSeeder.swift */,
 				DB06B01E2817B54F00AAD7B7 /* NanoChallenge01.xcdatamodeld */,
 			);
 			path = Data;
@@ -194,7 +191,6 @@
 				DB06B0332817E9D400AAD7B7 /* Recipe.swift in Sources */,
 				DB06B01A2817B54F00AAD7B7 /* RecipeListViewController.swift in Sources */,
 				DB06B0162817B54F00AAD7B7 /* AppDelegate.swift in Sources */,
-				DB06B0352817E9FB00AAD7B7 /* DataSeeder.swift in Sources */,
 				DB06B0182817B54F00AAD7B7 /* SceneDelegate.swift in Sources */,
 				DB06B02D2817D4AA00AAD7B7 /* recipeViewCell.swift in Sources */,
 			);
