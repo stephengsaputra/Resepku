@@ -157,6 +157,7 @@ extension FormTableViewController: UIImagePickerControllerDelegate, UINavigation
         imagePickerController.delegate = self
         imagePickerController.sourceType = selectedSource
         imagePickerController.allowsEditing = true
+        imagePickerController.view.tintColor = UIColor(named: "main")
         
         self.present(imagePickerController, animated: true, completion: nil)
     }

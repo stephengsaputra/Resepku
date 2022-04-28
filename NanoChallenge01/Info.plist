@@ -21,11 +21,5 @@
 			</array>
 		</dict>
 	</dict>
-	<key>NSCameraUsageDescription</key>
-	<string>Test</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Allow photos</string>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
 </dict>
 </plist>
