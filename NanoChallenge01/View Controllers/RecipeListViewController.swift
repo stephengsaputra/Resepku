@@ -40,7 +40,7 @@ extension RecipeListViewController: UICollectionViewDelegate, UICollectionViewDa
             withReuseIdentifier: "recipeViewCell",
             for: indexPath) as! recipeViewCell
         cell.recipeImage.image = recipes[indexPath.row].image
-        cell.recipeTitle.text = recipes[indexPath.row].recipeTitle
+        cell.recipeTitle.text = recipes[indexPath.row].title
         
         cell.contentView.layer.cornerRadius = 20
         cell.contentView.layer.masksToBounds = true
@@ -68,7 +68,7 @@ extension RecipeListViewController: UICollectionViewDelegate, UICollectionViewDa
         
         if let selectedRow  = rowSelected {
             if let destination = segue.destination as? RecipeDetailsViewController {
-                destination.recipeTitle = recipes[selectedRow].recipeTitle ?? ""
+                destination.recipeTitle = recipes[selectedRow].title ?? ""
                 destination.recipeImage = recipes[selectedRow].image ?? UIImage()
                 destination.recipeIngredients = recipes[selectedRow].ingredients ?? ""
             }

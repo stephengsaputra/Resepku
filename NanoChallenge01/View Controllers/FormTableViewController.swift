@@ -34,6 +34,9 @@ class FormTableViewController: UITableViewController {
     // Data Model
     var recipeModel: Recipe = Recipe()
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var recipes: [Recipes]?
+    
     var delegate: FormDelegate?
     
     override func viewDidLoad() {
@@ -57,6 +60,24 @@ class FormTableViewController: UITableViewController {
         recipeDirectionsTextView.layer.borderColor = UIColor(named: "TF")?.cgColor
         recipeDirectionsTextView.layer.cornerRadius = 5
         self.recipeDirectionsTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone2(sender:)))
+        
+        fetchData()
+    }
+    
+    // Save to Core Data
+    func save() {
+        
+        let newRecipe = Recipes(context: self.context)
+        newRecipe.title = recipeModel.title
+        newRecipe.image = recipeModel.image?.pngData()
+        newRecipe.ingredients = recipeModel.ingredients
+        newRecipe.directions = recipeModel.directions
+        
+        do {
+            try self.context.save()
+        } catch {
+            print(error)
+        }
     }
     
     @objc func tapDone1(sender: Any) {
@@ -81,18 +102,23 @@ class FormTableViewController: UITableViewController {
     
     func validateRecipeModel() {
         
-        if recipeModel.recipeTitle != nil &&
-            recipeModel.image != nil &&
-            recipeModel.ingredients != nil &&
-            recipeModel.directions != nil
-        {
+        if recipeModel.title != nil && recipeModel.image != nil && recipeModel.ingredients != nil && recipeModel.directions != nil {
             delegate?.enableAddButton()
         } else {
             delegate?.disableAddButtton()
         }
     }
     
-    // MARK: - Source Image
+    func fetchData() {
+        
+        do {
+            self.recipes = try context.fetch(Recipes.fetchRequest())
+        } catch {
+            print(error)
+        }
+        print(recipes?.count)
+    }
+    
     @IBAction func changeImageTapped(_ sender: Any) {
         showAlert()
     }
@@ -159,9 +185,9 @@ extension FormTableViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         recipeNameTextField.resignFirstResponder()
-        recipeModel.recipeTitle = recipeNameTextField.text
+        recipeModel.title = recipeNameTextField.text
         if recipeNameTextField.text == "" {
-            recipeModel.recipeTitle = nil
+            recipeModel.title = nil
         }
         validateRecipeModel()
         
