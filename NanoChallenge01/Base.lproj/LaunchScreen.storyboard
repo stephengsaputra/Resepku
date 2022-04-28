@@ -11,16 +11,15 @@
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController interfaceStyle="dark" id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="TWB-mH-a6j">
-                                <rect key="frame" x="105" y="348" width="200" height="200"/>
+                                <rect key="frame" x="107" y="348" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="TWB-mH-a6j" secondAttribute="height" id="0z3-cQ-Ysg"/>
-                                    <constraint firstAttribute="width" constant="200" id="6d8-Px-Vgv"/>
                                     <constraint firstAttribute="height" constant="200" id="oXr-oO-Ot2"/>
                                 </constraints>
                             </imageView>
@@ -29,8 +28,7 @@
                         <color key="backgroundColor" name="main"/>
                         <constraints>
                             <constraint firstItem="TWB-mH-a6j" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="CDK-0U-TOD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TWB-mH-a6j" secondAttribute="trailing" constant="105" id="CiV-d8-IZJ"/>
-                            <constraint firstItem="TWB-mH-a6j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="105" id="n3w-pv-6Qv"/>
+                            <constraint firstItem="TWB-mH-a6j" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="MXb-IP-SIb"/>
                         </constraints>
                     </view>
                 </viewController>

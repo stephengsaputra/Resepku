@@ -14,7 +14,6 @@ class RecipeListViewController: UIViewController {
     var rowSelected: Int?
     
     // Data Model
-    var recipeModel: Recipe = Recipe()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var recipes: [Recipes]?
     
@@ -32,7 +31,6 @@ class RecipeListViewController: UIViewController {
     
     func fetchData() {
         
-        // Fetch the data from Core Data to display in the tableView
         do {
             self.recipes = try context.fetch(Recipes.fetchRequest())
             DispatchQueue.main.async {
@@ -41,6 +39,8 @@ class RecipeListViewController: UIViewController {
         } catch {
             print(error)
         }
+        
+        self.recipes?.sort { $0.title ?? "" < $1.title ?? "" }
     }
 }
 
