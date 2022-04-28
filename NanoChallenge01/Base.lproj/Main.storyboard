@@ -35,7 +35,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="174" height="239"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="9" translatesAutoresizingMaskIntoConstraints="NO" id="Kxs-KG-z4z">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyState" translatesAutoresizingMaskIntoConstraints="NO" id="Kxs-KG-z4z">
                                                     <rect key="frame" x="0.0" y="0.0" width="174" height="174"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Kxs-KG-z4z" secondAttribute="height" multiplier="1:1" id="0cj-dq-fU6"/>
@@ -83,7 +83,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="Piv-LO-VSl">
                             <color key="tintColor" red="0.94901960780000005" green="0.18823529410000001" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="hpY-c7-05H" kind="show" id="Zra-ae-XtN"/>
+                                <segue destination="hpY-c7-05H" kind="show" identifier="toFormSegue" id="Zra-ae-XtN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -219,6 +219,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="recipeDirectionsTextView" destination="3oQ-pC-BG9" id="ob5-4e-fLG"/>
                         <outlet property="recipeImageView" destination="QQ8-0X-EuA" id="S8t-Pa-Cup"/>
                         <outlet property="recipeIngredientsTextView" destination="BaM-ne-W2A" id="QeY-iF-Ivo"/>
                         <outlet property="recipeTitleLabel" destination="CsK-Gs-gx0" id="mUT-5g-KOB"/>
@@ -437,6 +438,7 @@
     </scenes>
     <resources>
         <image name="9" width="1280" height="853"/>
+        <image name="emptyState" width="400" height="400"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

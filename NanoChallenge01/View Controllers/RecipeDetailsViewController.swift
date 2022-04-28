@@ -12,10 +12,12 @@ class RecipeDetailsViewController: UIViewController {
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var recipeTitleLabel: UILabel!
     @IBOutlet weak var recipeIngredientsTextView: UITextView!
+    @IBOutlet weak var recipeDirectionsTextView: UITextView!
     
     var recipeTitle: String = ""
     var recipeImage: UIImage!
     var recipeIngredients: String = ""
+    var recipeDirections: String = ""
     
     override func viewDidLoad() {
         
@@ -24,5 +26,6 @@ class RecipeDetailsViewController: UIViewController {
         recipeTitleLabel.text = recipeTitle
         recipeImageView.image = recipeImage
         recipeIngredientsTextView.text = recipeIngredients
+        recipeDirectionsTextView.text = recipeDirections
     }
 }

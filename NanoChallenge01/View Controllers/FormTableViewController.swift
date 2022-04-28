@@ -33,7 +33,6 @@ class FormTableViewController: UITableViewController {
     
     // Data Model
     var recipeModel: Recipe = Recipe()
-    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var recipes: [Recipes]?
     
@@ -116,7 +115,6 @@ class FormTableViewController: UITableViewController {
         } catch {
             print(error)
         }
-        print(recipes?.count)
     }
     
     @IBAction func changeImageTapped(_ sender: Any) {

@@ -7,14 +7,14 @@
 
 import UIKit
 
-protocol SaveToCoreData: AnyObject {
+protocol ReloadCoreDataDelegate: AnyObject {
     
-    func save()
+    func reloadData()
 }
 
 class AddRecipeViewController: UIViewController {
     
-    var addRecipeDelegate: SaveToCoreData?
+    var delegate: ReloadCoreDataDelegate?
     
     override func viewDidLoad() {
         
@@ -31,9 +31,11 @@ class AddRecipeViewController: UIViewController {
         
         let alert = UIAlertController(title: "Recipe Added", message: "Your recipe is now added to your cook book!", preferredStyle: .alert)
         let action = UIAlertAction(title: "Done", style: .default) { action in
+            self.delegate?.reloadData()
             self.navigationController?.popViewController(animated: true)
         }
         
+        alert.view.tintColor = UIColor(named: "main")
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }

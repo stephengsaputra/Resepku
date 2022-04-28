@@ -13,25 +13,41 @@ class RecipeListViewController: UIViewController {
     
     var rowSelected: Int?
     
-    var recipes: [Recipe] = []
+    // Data Model
+    var recipeModel: Recipe = Recipe()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var recipes: [Recipes]?
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        recipes = DataSeeder().generateRecipes()
-        
         recipeCollectionView.delegate = self
         recipeCollectionView.dataSource = self
+        
+        fetchData()
     }
     
     @IBAction func unwindToRecipeListView(_ sender: UIStoryboardSegue) { }
+    
+    func fetchData() {
+        
+        // Fetch the data from Core Data to display in the tableView
+        do {
+            self.recipes = try context.fetch(Recipes.fetchRequest())
+            DispatchQueue.main.async {
+                self.recipeCollectionView.reloadData()
+            }
+        } catch {
+            print(error)
+        }
+    }
 }
 
 extension RecipeListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return recipes.count
+        return recipes?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -39,8 +55,8 @@ extension RecipeListViewController: UICollectionViewDelegate, UICollectionViewDa
         let cell = recipeCollectionView.dequeueReusableCell(
             withReuseIdentifier: "recipeViewCell",
             for: indexPath) as! recipeViewCell
-        cell.recipeImage.image = recipes[indexPath.row].image
-        cell.recipeTitle.text = recipes[indexPath.row].title
+        cell.recipeImage.image = UIImage(data: recipes?[indexPath.row].image ?? Data())
+        cell.recipeTitle.text = recipes?[indexPath.row].title
         
         cell.contentView.layer.cornerRadius = 20
         cell.contentView.layer.masksToBounds = true
@@ -68,10 +84,25 @@ extension RecipeListViewController: UICollectionViewDelegate, UICollectionViewDa
         
         if let selectedRow  = rowSelected {
             if let destination = segue.destination as? RecipeDetailsViewController {
-                destination.recipeTitle = recipes[selectedRow].title ?? ""
-                destination.recipeImage = recipes[selectedRow].image ?? UIImage()
-                destination.recipeIngredients = recipes[selectedRow].ingredients ?? ""
+                destination.recipeTitle = recipes?[selectedRow].title ?? ""
+                destination.recipeImage = UIImage(data: recipes?[selectedRow].image ?? Data())
+                destination.recipeIngredients = recipes?[selectedRow].ingredients ?? ""
+                destination.recipeDirections = recipes?[selectedRow].directions ?? ""
             }
         }
+        
+        if segue.identifier == "toFormSegue" {
+            if let vc = segue.destination as? AddRecipeViewController {
+                vc.delegate = self
+            }
+        }
+    }
+}
+
+extension RecipeListViewController: ReloadCoreDataDelegate {
+    
+    func reloadData() {
+        fetchData()
+        self.recipeCollectionView.reloadData()
     }
 }
