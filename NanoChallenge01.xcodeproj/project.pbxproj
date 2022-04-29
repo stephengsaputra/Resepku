@@ -73,7 +73,6 @@
 				DB06B0152817B54F00AAD7B7 /* AppDelegate.swift */,
 				DB06B0172817B54F00AAD7B7 /* SceneDelegate.swift */,
 				DB06B0362817EA0300AAD7B7 /* Data */,
-				DB06B02C2817D4AA00AAD7B7 /* recipeViewCell.swift */,
 				DBD5FD1128186EBE002052DF /* View Controllers */,
 				DBD5FD13281872A3002052DF /* Extension */,
 				DB06B01B2817B54F00AAD7B7 /* Main.storyboard */,
@@ -97,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				DB06B0192817B54F00AAD7B7 /* RecipeListViewController.swift */,
+				DB06B02C2817D4AA00AAD7B7 /* recipeViewCell.swift */,
 				DB06B0302817E79700AAD7B7 /* RecipeDetailsViewController.swift */,
 				DBEB75722818282B00D0E481 /* AddRecipeViewController.swift */,
 				DBEB75742818287900D0E481 /* FormTableViewController.swift */,
@@ -343,8 +343,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NanoChallenge01/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Resepku;
-				INFOPLIST_KEY_NSCameraUsageDescription = Test;
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Allow photos";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Resepku uses the camera to take pictures of your dishes. Your photos won't be shared to the Internet";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Resepku uses your photos to create your private recipes. Your photos won't be shared to the Internet.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -375,8 +375,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NanoChallenge01/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Resepku;
-				INFOPLIST_KEY_NSCameraUsageDescription = Test;
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Allow photos";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Resepku uses the camera to take pictures of your dishes. Your photos won't be shared to the Internet";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Resepku uses your photos to create your private recipes. Your photos won't be shared to the Internet.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

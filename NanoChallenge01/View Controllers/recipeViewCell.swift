@@ -11,5 +11,4 @@ class recipeViewCell: UICollectionViewCell {
     
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var recipeTitle: UITextView!
-    
 }
