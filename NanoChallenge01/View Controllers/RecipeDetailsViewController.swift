@@ -28,4 +28,6 @@ class RecipeDetailsViewController: UIViewController {
         recipeIngredientsTextView.text = recipeIngredients
         recipeDirectionsTextView.text = recipeDirections
     }
+    
+    @IBAction func unwindToRecipeDetails(_ sender: UIStoryboardSegue) { }
 }

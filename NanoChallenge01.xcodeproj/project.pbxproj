@@ -14,9 +14,10 @@
 		DB06B0202817B54F00AAD7B7 /* NanoChallenge01.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB06B01E2817B54F00AAD7B7 /* NanoChallenge01.xcdatamodeld */; };
 		DB06B0222817B55000AAD7B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB06B0212817B55000AAD7B7 /* Assets.xcassets */; };
 		DB06B0252817B55000AAD7B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB06B0232817B55000AAD7B7 /* LaunchScreen.storyboard */; };
-		DB06B02D2817D4AA00AAD7B7 /* recipeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06B02C2817D4AA00AAD7B7 /* recipeViewCell.swift */; };
+		DB06B02D2817D4AA00AAD7B7 /* RecipeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06B02C2817D4AA00AAD7B7 /* RecipeViewCell.swift */; };
 		DB06B0312817E79700AAD7B7 /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06B0302817E79700AAD7B7 /* RecipeDetailsViewController.swift */; };
 		DB06B0332817E9D400AAD7B7 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06B0322817E9D400AAD7B7 /* Recipe.swift */; };
+		DB733751281C1BA9007813AB /* EditRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB733750281C1BA9007813AB /* EditRecipeViewController.swift */; };
 		DBD5FD15281872BE002052DF /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD5FD14281872BE002052DF /* UITextView.swift */; };
 		DBEB75732818282B00D0E481 /* AddRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEB75722818282B00D0E481 /* AddRecipeViewController.swift */; };
 		DBEB75752818287900D0E481 /* FormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEB75742818287900D0E481 /* FormTableViewController.swift */; };
@@ -32,9 +33,10 @@
 		DB06B0212817B55000AAD7B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB06B0242817B55000AAD7B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB06B0262817B55000AAD7B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DB06B02C2817D4AA00AAD7B7 /* recipeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recipeViewCell.swift; sourceTree = "<group>"; };
+		DB06B02C2817D4AA00AAD7B7 /* RecipeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewCell.swift; sourceTree = "<group>"; };
 		DB06B0302817E79700AAD7B7 /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
 		DB06B0322817E9D400AAD7B7 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		DB733750281C1BA9007813AB /* EditRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecipeViewController.swift; sourceTree = "<group>"; };
 		DBD5FD14281872BE002052DF /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		DBEB75722818282B00D0E481 /* AddRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeViewController.swift; sourceTree = "<group>"; };
 		DBEB75742818287900D0E481 /* FormTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewController.swift; sourceTree = "<group>"; };
@@ -96,10 +98,11 @@
 			isa = PBXGroup;
 			children = (
 				DB06B0192817B54F00AAD7B7 /* RecipeListViewController.swift */,
-				DB06B02C2817D4AA00AAD7B7 /* recipeViewCell.swift */,
+				DB06B02C2817D4AA00AAD7B7 /* RecipeViewCell.swift */,
 				DB06B0302817E79700AAD7B7 /* RecipeDetailsViewController.swift */,
 				DBEB75722818282B00D0E481 /* AddRecipeViewController.swift */,
 				DBEB75742818287900D0E481 /* FormTableViewController.swift */,
+				DB733750281C1BA9007813AB /* EditRecipeViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -190,9 +193,10 @@
 				DB06B0312817E79700AAD7B7 /* RecipeDetailsViewController.swift in Sources */,
 				DB06B0332817E9D400AAD7B7 /* Recipe.swift in Sources */,
 				DB06B01A2817B54F00AAD7B7 /* RecipeListViewController.swift in Sources */,
+				DB733751281C1BA9007813AB /* EditRecipeViewController.swift in Sources */,
 				DB06B0162817B54F00AAD7B7 /* AppDelegate.swift in Sources */,
 				DB06B0182817B54F00AAD7B7 /* SceneDelegate.swift in Sources */,
-				DB06B02D2817D4AA00AAD7B7 /* recipeViewCell.swift in Sources */,
+				DB06B02D2817D4AA00AAD7B7 /* RecipeViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
