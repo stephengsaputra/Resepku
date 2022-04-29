@@ -1,37 +1,34 @@
 //
-//  AddRecipeViewController.swift
+//  EditRecipeViewController.swift
 //  NanoChallenge01
 //
-//  Created by Stephen Giovanni Saputra on 26/04/22.
+//  Created by Stephen Giovanni Saputra on 29/04/22.
 //
 
 import UIKit
 
-protocol ReloadCoreDataDelegate: AnyObject {
+class EditRecipeViewController: UIViewController {
     
-    func reloadData()
-}
-
-class AddRecipeViewController: UIViewController {
-    
-    var delegate: ReloadCoreDataDelegate?
+    var recipeTitle = ""
+    var recipeImage = UIImage()
+    var ingredients = ""
+    var directions = ""
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem!.isEnabled = false
+        self.navigationItem.rightBarButtonItem!.isEnabled = true
     }
     
-    @IBAction func addRecipePressed(_ sender: Any) {
+    @IBAction func doneEditingRecipePressed(_ sender: Any) {
         showAlert()
-        (children.first as? FormTableViewController)?.save()
+        (children.first as? EditRecipeFormTableVC)?.save()
     }
     
     func showAlert() {
         
-        let alert = UIAlertController(title: "Recipe Added", message: "Your recipe is now added to your cook book!", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Recipe Updated", message: "Your changes has been saved!", preferredStyle: .alert)
         let action = UIAlertAction(title: "Done", style: .default) { action in
-            self.delegate?.reloadData()
             self.navigationController?.popViewController(animated: true)
         }
         
@@ -43,14 +40,15 @@ class AddRecipeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "formSegue" {
-            if let vc = segue.destination as? FormTableViewController {
+            if let vc = segue.destination as? EditRecipeFormTableVC {
+                vc.recipeModel = Recipe(title: self.recipeTitle, image: self.recipeImage, ingredients: self.ingredients, directions: self.directions)
                 vc.delegate = self
             }
         }
     }
 }
 
-extension AddRecipeViewController: FormDelegate {
+extension EditRecipeViewController: EditFormDelegate {
     
     func disableAddButtton() {
         self.navigationItem.rightBarButtonItem!.isEnabled = false

@@ -18,18 +18,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8q5-sN-c4U">
-                                <rect key="frame" x="16" y="0.0" width="382" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pqM-kM-SaD">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="0.0" id="pqM-kM-SaD">
                                     <size key="itemSize" width="185" height="254"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="16" minY="15" maxX="16" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="recipeViewCell" id="IOd-PX-BXt" customClass="recipeViewCell" customModule="NanoChallenge01" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="174" height="239"/>
+                                        <rect key="frame" x="16" y="15" width="174" height="239"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4aG-dT-tHK">
                                             <rect key="frame" x="0.0" y="0.0" width="174" height="239"/>
@@ -73,10 +73,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="8q5-sN-c4U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="b0q-I0-Hln"/>
+                            <constraint firstItem="8q5-sN-c4U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="b0q-I0-Hln"/>
                             <constraint firstAttribute="bottom" secondItem="8q5-sN-c4U" secondAttribute="bottom" id="nY6-ex-ACZ"/>
                             <constraint firstItem="8q5-sN-c4U" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qa6-Be-Ke1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8q5-sN-c4U" secondAttribute="trailing" constant="16" id="wOM-aG-RVe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8q5-sN-c4U" secondAttribute="trailing" id="wOM-aG-RVe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Recipes" id="Pcs-jb-omu">
@@ -127,7 +127,7 @@
                                 <segue destination="mqj-do-mID" kind="unwind" unwindAction="unwindToRecipeListView:" id="6cr-9Y-yBA"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Add Recipe" id="CK6-hW-RFX">
+                        <barButtonItem key="rightBarButtonItem" title="Add Recipe" style="done" id="CK6-hW-RFX">
                             <color key="tintColor" red="0.94901960780000005" green="0.18823529410000001" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="addRecipePressed:" destination="hpY-c7-05H" id="a1J-6v-PRb"/>
@@ -194,32 +194,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XaX-P9-z3s">
-                                <rect key="frame" x="0.0" y="47" width="414" height="44"/>
-                                <items>
-                                    <navigationItem id="VRU-GG-vdU">
-                                        <barButtonItem key="rightBarButtonItem" title="Edit" id="OFz-M6-a2Z">
-                                            <color key="tintColor" red="0.94901960780000005" green="0.18823529410000001" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <segue destination="jtB-Lz-v5U" kind="show" identifier="toEditRecipe" id="uQM-nj-8id"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                                <navigationBarAppearance key="standardAppearance">
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                </navigationBarAppearance>
-                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tC5-BU-Exg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="XaX-P9-z3s" secondAttribute="trailing" id="26u-Wo-Z1c"/>
                             <constraint firstItem="QQ8-0X-EuA" firstAttribute="top" secondItem="JdI-bI-oU4" secondAttribute="top" constant="91" id="5Uy-bw-GHE"/>
                             <constraint firstItem="BaM-ne-W2A" firstAttribute="top" secondItem="Hmr-XI-9so" secondAttribute="bottom" id="Imi-EC-cCU"/>
                             <constraint firstItem="tC5-BU-Exg" firstAttribute="trailing" secondItem="CsK-Gs-gx0" secondAttribute="trailing" constant="20" id="Ja4-KA-VgD"/>
                             <constraint firstItem="s2w-dn-1nw" firstAttribute="leading" secondItem="tC5-BU-Exg" secondAttribute="leading" constant="20" id="P0s-Tn-6hv"/>
-                            <constraint firstItem="XaX-P9-z3s" firstAttribute="leading" secondItem="JdI-bI-oU4" secondAttribute="leading" id="Pj7-Tb-O6k"/>
                             <constraint firstItem="tC5-BU-Exg" firstAttribute="trailing" secondItem="3oQ-pC-BG9" secondAttribute="trailing" constant="16" id="Rbd-EV-oSg"/>
                             <constraint firstItem="tC5-BU-Exg" firstAttribute="trailing" secondItem="s2w-dn-1nw" secondAttribute="trailing" constant="20" id="SvC-Pm-XQd"/>
                             <constraint firstItem="3oQ-pC-BG9" firstAttribute="leading" secondItem="tC5-BU-Exg" secondAttribute="leading" constant="16" id="a22-iE-OKx"/>
@@ -228,7 +210,6 @@
                             <constraint firstItem="QQ8-0X-EuA" firstAttribute="trailing" secondItem="tC5-BU-Exg" secondAttribute="trailing" id="dNp-4Z-P7D"/>
                             <constraint firstItem="Hmr-XI-9so" firstAttribute="leading" secondItem="tC5-BU-Exg" secondAttribute="leading" constant="20" id="fEl-Ee-Qwm"/>
                             <constraint firstItem="QQ8-0X-EuA" firstAttribute="leading" secondItem="tC5-BU-Exg" secondAttribute="leading" id="fv5-s0-UZN"/>
-                            <constraint firstItem="XaX-P9-z3s" firstAttribute="top" secondItem="tC5-BU-Exg" secondAttribute="top" constant="-93" id="gaP-3D-C03"/>
                             <constraint firstItem="tC5-BU-Exg" firstAttribute="trailing" secondItem="BaM-ne-W2A" secondAttribute="trailing" constant="16" id="hKE-7L-Ux4"/>
                             <constraint firstItem="CsK-Gs-gx0" firstAttribute="leading" secondItem="tC5-BU-Exg" secondAttribute="leading" constant="20" id="j2V-nb-Y6Z"/>
                             <constraint firstItem="Hmr-XI-9so" firstAttribute="top" secondItem="CsK-Gs-gx0" secondAttribute="bottom" constant="10" id="mgu-HS-Tea"/>
@@ -242,6 +223,7 @@
                         <outlet property="recipeImageView" destination="QQ8-0X-EuA" id="S8t-Pa-Cup"/>
                         <outlet property="recipeIngredientsTextView" destination="BaM-ne-W2A" id="QeY-iF-Ivo"/>
                         <outlet property="recipeTitleLabel" destination="CsK-Gs-gx0" id="mUT-5g-KOB"/>
+                        <segue destination="jtB-Lz-v5U" kind="show" identifier="toEditRecipe" id="Sxa-16-7b6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QHI-CM-G7S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -251,7 +233,6 @@
         <!--Navigation Controller-->
         <scene sceneID="kuW-aC-dkp">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PKX-55-U0c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HfH-y6-7dZ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="avr-SI-Pdx">
@@ -264,13 +245,14 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Rzo-kz-r5y"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PKX-55-U0c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="77.678571428571431"/>
         </scene>
-        <!--Form Table View Controller-->
+        <!--Add Recipe Form TableVC-->
         <scene sceneID="sQd-77-BiY">
             <objects>
-                <tableViewController id="QnZ-6i-V0Z" customClass="FormTableViewController" customModule="NanoChallenge01" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="QnZ-6i-V0Z" customClass="AddRecipeFormTableVC" customModule="NanoChallenge01" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="1" estimatedSectionFooterHeight="-1" id="49r-4a-Xhg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="722"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -485,10 +467,10 @@
                                 <segue destination="Hpd-CD-7jf" kind="unwind" unwindAction="unwindToRecipeDetails:" id="foC-QR-MNc"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="QZw-0F-nQh">
+                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="QZw-0F-nQh">
                             <color key="tintColor" red="0.94901960780000005" green="0.18823529410000001" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="addRecipePressed:" destination="jtB-Lz-v5U" id="Jdq-ku-EEj"/>
+                                <action selector="doneEditingRecipePressed:" destination="jtB-Lz-v5U" id="Rfn-qT-fXs"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -498,10 +480,10 @@
             </objects>
             <point key="canvasLocation" x="2628" y="78"/>
         </scene>
-        <!--Form Table View Controller-->
+        <!--Edit Recipe Form TableVC-->
         <scene sceneID="bHt-8R-nZC">
             <objects>
-                <tableViewController id="tIf-qA-hW5" customClass="FormTableViewController" customModule="NanoChallenge01" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="tIf-qA-hW5" customClass="EditRecipeFormTableVC" customModule="NanoChallenge01" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="1" estimatedSectionFooterHeight="-1" id="ra4-Zo-XZl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="722"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

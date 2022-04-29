@@ -82,7 +82,7 @@ extension RecipeListViewController: UICollectionViewDelegate, UICollectionViewDa
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let selectedRow  = rowSelected {
+        if let selectedRow = rowSelected {
             if let destination = segue.destination as? RecipeDetailsViewController {
                 destination.recipeTitle = recipes?[selectedRow].title ?? ""
                 destination.recipeImage = UIImage(data: recipes?[selectedRow].image ?? Data())

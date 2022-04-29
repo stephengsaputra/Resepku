@@ -27,7 +27,26 @@ class RecipeDetailsViewController: UIViewController {
         recipeImageView.image = recipeImage
         recipeIngredientsTextView.text = recipeIngredients
         recipeDirectionsTextView.text = recipeDirections
+        
+        let editBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(toEditRecipeView))
+        self.navigationItem.rightBarButtonItem  = editBarButtonItem
     }
     
     @IBAction func unwindToRecipeDetails(_ sender: UIStoryboardSegue) { }
+    
+    @objc func toEditRecipeView() {
+        performSegue(withIdentifier: "toEditRecipe", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toEditRecipe" {
+            if let vc = segue.destination as? EditRecipeViewController {
+                vc.recipeTitle = self.recipeTitle
+                vc.recipeImage = self.recipeImage
+                vc.ingredients = self.recipeIngredients
+                vc.directions = self.recipeDirections
+            }
+        }
+    }
 }

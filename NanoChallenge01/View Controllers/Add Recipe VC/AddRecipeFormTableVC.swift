@@ -7,13 +7,13 @@
 
 import UIKit
 
-protocol FormDelegate: AnyObject {
+protocol AddRecipeDelegate: AnyObject {
     
     func enableAddButton()
     func disableAddButtton()
 }
 
-class FormTableViewController: UITableViewController {
+class AddRecipeFormTableVC: UITableViewController {
     
     @IBOutlet weak var recipeFormTableView: UITableView!
     
@@ -34,9 +34,8 @@ class FormTableViewController: UITableViewController {
     // Data Model
     var recipeModel: Recipe = Recipe()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var recipes: [Recipes]?
     
-    var delegate: FormDelegate?
+    var delegate: AddRecipeDelegate?
     
     override func viewDidLoad() {
         
@@ -59,8 +58,6 @@ class FormTableViewController: UITableViewController {
         recipeDirectionsTextView.layer.borderColor = UIColor(named: "TF")?.cgColor
         recipeDirectionsTextView.layer.cornerRadius = 5
         self.recipeDirectionsTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone2(sender:)))
-        
-        fetchData()
     }
     
     // Save to Core Data
@@ -108,15 +105,6 @@ class FormTableViewController: UITableViewController {
         }
     }
     
-    func fetchData() {
-        
-        do {
-            self.recipes = try context.fetch(Recipes.fetchRequest())
-        } catch {
-            print(error)
-        }
-    }
-    
     @IBAction func changeImageTapped(_ sender: Any) {
         showAlert()
     }
@@ -144,7 +132,7 @@ class FormTableViewController: UITableViewController {
     }
 }
 
-extension FormTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension AddRecipeFormTableVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func showImagePicker(selectedSource: UIImagePickerController.SourceType) {
         
@@ -180,7 +168,7 @@ extension FormTableViewController: UIImagePickerControllerDelegate, UINavigation
     }
 }
 
-extension FormTableViewController: UITextFieldDelegate {
+extension AddRecipeFormTableVC: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
