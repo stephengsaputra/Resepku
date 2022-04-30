@@ -21,6 +21,11 @@ class RecipeListViewController: UIViewController {
         
         super.viewDidLoad()
         
+        let height = self.view.frame.size.height * 0.2773
+        let width = self.view.frame.size.width  * 0.4359
+        let layout = recipeCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: width, height: height)
+        
         recipeCollectionView.delegate = self
         recipeCollectionView.dataSource = self
         
