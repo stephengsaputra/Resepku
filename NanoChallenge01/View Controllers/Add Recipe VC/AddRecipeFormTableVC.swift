@@ -34,12 +34,15 @@ class AddRecipeFormTableVC: UITableViewController {
     // Data Model
     var recipeModel: Recipe = Recipe()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var recipes: [Recipes]?
     
     var delegate: AddRecipeDelegate?
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        fetchData()
         
         recipeNameTextField.borderStyle = UITextField.BorderStyle.roundedRect
         recipeNameTextField.delegate = self
@@ -64,6 +67,7 @@ class AddRecipeFormTableVC: UITableViewController {
     func save() {
         
         let newRecipe = Recipes(context: self.context)
+        newRecipe.id = Int64((recipes?.count ?? 0) + 1)
         newRecipe.title = recipeModel.title
         newRecipe.image = recipeModel.image?.pngData()
         newRecipe.ingredients = recipeModel.ingredients
@@ -71,6 +75,15 @@ class AddRecipeFormTableVC: UITableViewController {
         
         do {
             try self.context.save()
+        } catch {
+            print(error)
+        }
+    }
+    
+    func fetchData() {
+        
+        do {
+            self.recipes = try context.fetch(Recipes.fetchRequest())
         } catch {
             print(error)
         }

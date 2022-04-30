@@ -84,6 +84,7 @@ extension RecipeListViewController: UICollectionViewDelegate, UICollectionViewDa
         
         if let selectedRow = rowSelected {
             if let destination = segue.destination as? RecipeDetailsViewController {
+                destination.recipeID = recipes?[selectedRow].id ?? 0
                 destination.recipeTitle = recipes?[selectedRow].title ?? ""
                 destination.recipeImage = UIImage(data: recipes?[selectedRow].image ?? Data())
                 destination.recipeIngredients = recipes?[selectedRow].ingredients ?? ""

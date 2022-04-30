@@ -14,6 +14,7 @@ class RecipeDetailsViewController: UIViewController {
     @IBOutlet weak var recipeIngredientsTextView: UITextView!
     @IBOutlet weak var recipeDirectionsTextView: UITextView!
     
+    var recipeID: Int64 = 0
     var recipeTitle: String = ""
     var recipeImage: UIImage!
     var recipeIngredients: String = ""
@@ -27,6 +28,8 @@ class RecipeDetailsViewController: UIViewController {
         recipeImageView.image = recipeImage
         recipeIngredientsTextView.text = recipeIngredients
         recipeDirectionsTextView.text = recipeDirections
+        
+        print(recipeID)
         
         let editBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(toEditRecipeView))
         self.navigationItem.rightBarButtonItem  = editBarButtonItem

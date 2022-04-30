@@ -10,6 +10,7 @@ import UIKit
 
 struct Recipe {
     
+    var id: Int64?
     var title: String?
     var image: UIImage?
     var ingredients: String?
