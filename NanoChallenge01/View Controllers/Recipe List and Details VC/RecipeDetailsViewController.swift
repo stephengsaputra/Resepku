@@ -74,8 +74,11 @@ class RecipeDetailsViewController: UIViewController {
 
 extension RecipeDetailsViewController: ReloadRecipeDetailDelegate {
     
-    func reloadData() {
+    func reloadData(title: String, ingredients: String, directions: String, image: UIImage) {
         
-        
+        self.recipeTitleLabel.text = title
+        self.recipeImageView.image = image
+        self.recipeIngredientsTextView.text = ingredients
+        self.recipeDirectionsTextView.text = directions
     }
 }

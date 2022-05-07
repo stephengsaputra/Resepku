@@ -9,7 +9,7 @@ import UIKit
 
 protocol ReloadRecipeDetailDelegate: AnyObject {
     
-    func reloadData()
+    func reloadData(title: String, ingredients: String, directions: String, image: UIImage)
 }
 
 class EditRecipeViewController: UIViewController {
@@ -38,7 +38,11 @@ class EditRecipeViewController: UIViewController {
         
         let alert = UIAlertController(title: "Recipe Updated", message: "Your changes has been saved!", preferredStyle: .alert)
         let action = UIAlertAction(title: "Done", style: .default) { action in
-            self.delegate?.reloadData()
+            self.delegate?.reloadData(
+                title: (self.children.first as? EditRecipeFormTableVC)?.recipeModel.title ?? "",
+                ingredients: (self.children.first as? EditRecipeFormTableVC)?.recipeModel.ingredients ?? "",
+                directions: (self.children.first as? EditRecipeFormTableVC)?.recipeModel.directions ?? "",
+                image: (self.children.first as? EditRecipeFormTableVC)?.recipeModel.image ?? UIImage())
             self.navigationController?.popViewController(animated: true)
         }
         
