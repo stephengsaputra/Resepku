@@ -7,12 +7,19 @@
 
 import UIKit
 
+protocol ReloadCoreDataAfterUpdateDelegate: AnyObject {
+    
+    func reloadTable()
+}
+
 class RecipeDetailsViewController: UIViewController {
     
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var recipeTitleLabel: UILabel!
     @IBOutlet weak var recipeIngredientsTextView: UITextView!
     @IBOutlet weak var recipeDirectionsTextView: UITextView!
+    
+    var delegate: ReloadCoreDataAfterUpdateDelegate?
     
     var recipeID: Int64 = 0
     var recipeTitle: String = ""
@@ -35,6 +42,15 @@ class RecipeDetailsViewController: UIViewController {
         self.navigationItem.rightBarButtonItem  = editBarButtonItem
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        super.viewWillDisappear(animated)
+
+        if self.isMovingFromParent {
+            self.delegate?.reloadTable()
+        }
+    }
+    
     @IBAction func unwindToRecipeDetails(_ sender: UIStoryboardSegue) { }
     
     @objc func toEditRecipeView() {
@@ -50,7 +66,16 @@ class RecipeDetailsViewController: UIViewController {
                 vc.recipeImage = self.recipeImage
                 vc.ingredients = self.recipeIngredients
                 vc.directions = self.recipeDirections
+                vc.delegate = self
             }
         }
+    }
+}
+
+extension RecipeDetailsViewController: ReloadRecipeDetailDelegate {
+    
+    func reloadData() {
+        
+        
     }
 }

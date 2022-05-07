@@ -127,7 +127,7 @@
                                 <segue destination="mqj-do-mID" kind="unwind" unwindAction="unwindToRecipeListView:" id="6cr-9Y-yBA"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Add Recipe" style="done" id="CK6-hW-RFX">
+                        <barButtonItem key="rightBarButtonItem" title="Add" style="done" id="CK6-hW-RFX">
                             <color key="tintColor" red="0.94901960780000005" green="0.18823529410000001" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="addRecipePressed:" destination="hpY-c7-05H" id="a1J-6v-PRb"/>
@@ -552,7 +552,7 @@
                                                         <constraint firstAttribute="height" constant="44" id="1gs-gw-cVA"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="filled" title="Add Photo" cornerStyle="medium">
+                                                    <buttonConfiguration key="configuration" style="filled" title="Change Photo" cornerStyle="medium">
                                                         <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
                                                         <color key="baseBackgroundColor" red="0.94901960780000005" green="0.18823529410000001" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     </buttonConfiguration>

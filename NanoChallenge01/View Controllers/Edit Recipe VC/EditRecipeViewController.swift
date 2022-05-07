@@ -7,7 +7,14 @@
 
 import UIKit
 
+protocol ReloadRecipeDetailDelegate: AnyObject {
+    
+    func reloadData()
+}
+
 class EditRecipeViewController: UIViewController {
+    
+    var delegate: ReloadRecipeDetailDelegate?
     
     var recipeID: Int64 = 0
     var recipeTitle = ""
@@ -19,6 +26,7 @@ class EditRecipeViewController: UIViewController {
         
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem!.isEnabled = true
+        print(recipeID)
     }
     
     @IBAction func doneEditingRecipePressed(_ sender: Any) {
@@ -30,6 +38,7 @@ class EditRecipeViewController: UIViewController {
         
         let alert = UIAlertController(title: "Recipe Updated", message: "Your changes has been saved!", preferredStyle: .alert)
         let action = UIAlertAction(title: "Done", style: .default) { action in
+            self.delegate?.reloadData()
             self.navigationController?.popViewController(animated: true)
         }
         

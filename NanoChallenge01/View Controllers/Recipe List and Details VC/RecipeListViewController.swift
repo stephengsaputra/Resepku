@@ -101,6 +101,10 @@ extension RecipeListViewController: UICollectionViewDelegate, UICollectionViewDa
             if let vc = segue.destination as? AddRecipeViewController {
                 vc.delegate = self
             }
+        } else if segue.identifier == "toRecipeDetails" {
+            if let vc = segue.destination as? RecipeDetailsViewController {
+                vc.delegate = self
+            }
         }
     }
 }
@@ -108,6 +112,14 @@ extension RecipeListViewController: UICollectionViewDelegate, UICollectionViewDa
 extension RecipeListViewController: ReloadCoreDataDelegate {
     
     func reloadData() {
+        fetchData()
+        self.recipeCollectionView.reloadData()
+    }
+}
+
+extension RecipeListViewController: ReloadCoreDataAfterUpdateDelegate {
+    
+    func reloadTable() {
         fetchData()
         self.recipeCollectionView.reloadData()
     }

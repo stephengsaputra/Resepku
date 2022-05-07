@@ -34,7 +34,7 @@ class EditRecipeFormTableVC: UITableViewController {
     var directions = ""
     
     // Data Model
-    var recipes: Recipes!
+    var recipes: [Recipes]!
     var recipeModel: Recipe = Recipe()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -73,29 +73,36 @@ class EditRecipeFormTableVC: UITableViewController {
     // Save to Core Data
     func update() {
         
-        let fetchRecipe: NSFetchRequest<Recipes> = Recipes.fetchRequest()
+        fetchData()
+        
+        let results = recipes.filter { $0.id == recipeID }
+       
+        if results.isEmpty == false {
+            
+            print(results.count)
 
-         let results = try? context.fetch(fetchRecipe)
-
-         if results?.count == 0 {
-            // here you are inserting
-            recipes = Recipes(context: context)
-         } else {
-            // here you are updating
-            recipes = results?.first
-         }
-
-        recipes.id = recipeModel.id ?? 0
-        recipes.title = recipeModel.title ?? ""
-        recipes.image = recipeModel.image?.pngData() ?? Data()
-        recipes.ingredients = recipeModel.ingredients ?? ""
-        recipes.directions = recipeModel.directions ?? ""
+            results[0].setValue(recipeModel.title, forKey: "title")
+            results[0].setValue(recipeModel.image?.pngData(), forKey: "image")
+            results[0].setValue(recipeModel.ingredients, forKey: "ingredients")
+            results[0].setValue(recipeModel.directions, forKey: "directions")
+        }
         
         do {
             try self.context.save()
         } catch {
             print(error)
         }
+    }
+    
+    func fetchData() {
+        
+        do {
+            self.recipes = try context.fetch(Recipes.fetchRequest())
+        } catch {
+            print(error)
+        }
+        
+        self.recipes?.sort { $0.title ?? "" < $1.title ?? "" }
     }
     
     @objc func tapDone1(sender: Any) {
