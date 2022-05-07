@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 protocol EditFormDelegate: AnyObject {
     
@@ -26,12 +27,14 @@ class EditRecipeFormTableVC: UITableViewController {
     
     @IBOutlet weak var recipeDirectionsTextView: UITextView!
     
+    var recipeID: Int64 = 0
     var recipeTitle = ""
     var image: UIImage?
     var ingredients = ""
     var directions = ""
     
     // Data Model
+    var recipes: Recipes!
     var recipeModel: Recipe = Recipe()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -42,6 +45,8 @@ class EditRecipeFormTableVC: UITableViewController {
         super.viewDidLoad()
         
         print(recipeTitle)
+        
+        recipeID = recipeModel.id ?? 0
         
         recipeNameTextField.borderStyle = UITextField.BorderStyle.roundedRect
         recipeNameTextField.delegate = self
@@ -66,13 +71,25 @@ class EditRecipeFormTableVC: UITableViewController {
     }
     
     // Save to Core Data
-    func save() {
+    func update() {
         
-        let newRecipe = Recipes(context: self.context)
-        newRecipe.title = recipeModel.title
-        newRecipe.image = recipeModel.image?.pngData()
-        newRecipe.ingredients = recipeModel.ingredients
-        newRecipe.directions = recipeModel.directions
+        let fetchRecipe: NSFetchRequest<Recipes> = Recipes.fetchRequest()
+
+         let results = try? context.fetch(fetchRecipe)
+
+         if results?.count == 0 {
+            // here you are inserting
+            recipes = Recipes(context: context)
+         } else {
+            // here you are updating
+            recipes = results?.first
+         }
+
+        recipes.id = recipeModel.id ?? 0
+        recipes.title = recipeModel.title ?? ""
+        recipes.image = recipeModel.image?.pngData() ?? Data()
+        recipes.ingredients = recipeModel.ingredients ?? ""
+        recipes.directions = recipeModel.directions ?? ""
         
         do {
             try self.context.save()

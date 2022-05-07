@@ -9,6 +9,7 @@ import UIKit
 
 class EditRecipeViewController: UIViewController {
     
+    var recipeID: Int64 = 0
     var recipeTitle = ""
     var recipeImage = UIImage()
     var ingredients = ""
@@ -22,7 +23,7 @@ class EditRecipeViewController: UIViewController {
     
     @IBAction func doneEditingRecipePressed(_ sender: Any) {
         showAlert()
-        (children.first as? EditRecipeFormTableVC)?.save()
+        (children.first as? EditRecipeFormTableVC)?.update()
     }
     
     func showAlert() {
@@ -41,7 +42,13 @@ class EditRecipeViewController: UIViewController {
         
         if segue.identifier == "formSegue" {
             if let vc = segue.destination as? EditRecipeFormTableVC {
-                vc.recipeModel = Recipe(title: self.recipeTitle, image: self.recipeImage, ingredients: self.ingredients, directions: self.directions)
+                vc.recipeModel = Recipe(
+                    id: self.recipeID,
+                    title: self.recipeTitle,
+                    image: self.recipeImage,
+                    ingredients: self.ingredients,
+                    directions: self.directions
+                )
                 vc.delegate = self
             }
         }

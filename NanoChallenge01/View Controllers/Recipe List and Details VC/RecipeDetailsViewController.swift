@@ -45,6 +45,7 @@ class RecipeDetailsViewController: UIViewController {
         
         if segue.identifier == "toEditRecipe" {
             if let vc = segue.destination as? EditRecipeViewController {
+                vc.recipeID = self.recipeID
                 vc.recipeTitle = self.recipeTitle
                 vc.recipeImage = self.recipeImage
                 vc.ingredients = self.recipeIngredients
