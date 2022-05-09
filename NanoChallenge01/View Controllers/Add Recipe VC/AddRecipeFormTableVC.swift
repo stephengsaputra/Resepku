@@ -69,7 +69,7 @@ class AddRecipeFormTableVC: UITableViewController {
         let newRecipe = Recipes(context: self.context)
         newRecipe.id = Int64((recipes?.count ?? 0) + 1)
         newRecipe.title = recipeModel.title
-        newRecipe.image = recipeModel.image?.pngData()
+        newRecipe.image = recipeModel.image?.jpegData(compressionQuality: 1.0)
         newRecipe.ingredients = recipeModel.ingredients
         newRecipe.directions = recipeModel.directions
         

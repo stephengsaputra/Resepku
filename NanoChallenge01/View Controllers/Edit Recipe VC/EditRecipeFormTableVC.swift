@@ -82,7 +82,7 @@ class EditRecipeFormTableVC: UITableViewController {
             print(results.count)
 
             results[0].setValue(recipeModel.title, forKey: "title")
-            results[0].setValue(recipeModel.image?.pngData(), forKey: "image")
+            results[0].setValue(recipeModel.image?.jpegData(compressionQuality: 1.0), forKey: "image")
             results[0].setValue(recipeModel.ingredients, forKey: "ingredients")
             results[0].setValue(recipeModel.directions, forKey: "directions")
         }
