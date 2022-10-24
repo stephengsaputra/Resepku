@@ -149,10 +149,7 @@ extension AddRecipeFormTableVC: UIImagePickerControllerDelegate, UINavigationCon
     
     func showImagePicker(selectedSource: UIImagePickerController.SourceType) {
         
-        guard UIImagePickerController.isSourceTypeAvailable(selectedSource) else {
-            print("Error")
-            return
-        }
+        guard UIImagePickerController.isSourceTypeAvailable(selectedSource) else { return }
         
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
