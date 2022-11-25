@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 protocol ReloadCoreDataAfterUpdateDelegate: AnyObject {
     
@@ -14,10 +15,27 @@ protocol ReloadCoreDataAfterUpdateDelegate: AnyObject {
 
 class RecipeDetailsViewController: UIViewController {
     
+    // MARK: - Properties
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var recipeTitleLabel: UILabel!
     @IBOutlet weak var recipeIngredientsTextView: UITextView!
     @IBOutlet weak var recipeDirectionsTextView: UITextView!
+    
+    internal lazy var tableView: UITableView = {
+        
+        let table = UITableView(frame: .zero, style: .plain)
+        
+        table.register(RecipeImageTableViewCell.self, forCellReuseIdentifier: RecipeImageTableViewCell.identifier)
+        
+        table.delegate = self
+        table.dataSource = self
+        
+        table.separatorStyle = .none
+        table.showsVerticalScrollIndicator = false
+        table.backgroundColor = .clear
+        
+        return table
+    }()
     
     var delegate: ReloadCoreDataAfterUpdateDelegate?
     
@@ -27,19 +45,11 @@ class RecipeDetailsViewController: UIViewController {
     var recipeIngredients: String = ""
     var recipeDirections: String = ""
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        recipeTitleLabel.text = recipeTitle
-        recipeImageView.image = recipeImage
-        recipeIngredientsTextView.text = recipeIngredients
-        recipeDirectionsTextView.text = recipeDirections
-        
-        print(recipeID)
-        
-        let editBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(toEditRecipeView))
-        self.navigationItem.rightBarButtonItem  = editBarButtonItem
+        configureUI()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -51,6 +61,7 @@ class RecipeDetailsViewController: UIViewController {
         }
     }
     
+    // MARK: - Selectors
     @IBAction func unwindToRecipeDetails(_ sender: UIStoryboardSegue) { }
     
     @objc func toEditRecipeView() {
@@ -70,15 +81,22 @@ class RecipeDetailsViewController: UIViewController {
             }
         }
     }
-}
-
-extension RecipeDetailsViewController: ReloadRecipeDetailDelegate {
     
-    func reloadData(title: String, ingredients: String, directions: String, image: UIImage) {
+    // MARK: - Helpers
+    func configureUI() {
         
-        self.recipeTitleLabel.text = title
-        self.recipeImageView.image = image
-        self.recipeIngredientsTextView.text = ingredients
-        self.recipeDirectionsTextView.text = directions
+        navigationItem.largeTitleDisplayMode = .never
+        
+        let editBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(toEditRecipeView))
+        self.navigationItem.rightBarButtonItem  = editBarButtonItem
+        
+//        recipeTitleLabel.text = recipeTitle
+//        recipeIngredientsTextView.text = recipeIngredients
+//        recipeDirectionsTextView.text = recipeDirections
+        
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
 }

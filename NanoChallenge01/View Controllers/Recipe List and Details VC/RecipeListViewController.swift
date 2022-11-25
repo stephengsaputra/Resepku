@@ -26,6 +26,8 @@ class RecipeListViewController: UIViewController {
         let layout = recipeCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: height)
         
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         recipeCollectionView.delegate = self
         recipeCollectionView.dataSource = self
         
@@ -84,8 +86,8 @@ extension RecipeListViewController: UICollectionViewDelegate, UICollectionViewDa
             blue: 0.11,
             alpha: 0.15).cgColor
         cell.layer.shadowOffset = CGSize(width: 0, height: 0)
-        cell.layer.shadowRadius = 5
-        cell.layer.shadowOpacity = 1.0
+        cell.layer.shadowRadius = 30
+        cell.layer.shadowOpacity = 0.6
         cell.layer.masksToBounds = false
         
         return cell
