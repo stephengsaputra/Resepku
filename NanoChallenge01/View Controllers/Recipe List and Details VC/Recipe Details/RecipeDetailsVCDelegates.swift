@@ -13,10 +13,10 @@ extension RecipeDetailsViewController: ReloadRecipeDetailDelegate {
     
     func reloadData(title: String, ingredients: String, directions: String, image: UIImage) {
         
-        self.recipeTitleLabel.text = title
-        self.recipeImageView.image = image
-        self.recipeIngredientsTextView.text = ingredients
-        self.recipeDirectionsTextView.text = directions
+        self.recipeTitle = title
+        self.recipeImage = image
+        self.recipeIngredients = ingredients
+        self.recipeDirections = directions
     }
 }
 

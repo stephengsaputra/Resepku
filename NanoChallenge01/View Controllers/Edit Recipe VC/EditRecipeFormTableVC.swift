@@ -181,14 +181,13 @@ extension EditRecipeFormTableVC: UIImagePickerControllerDelegate, UINavigationCo
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        if let selectedImage = info[.originalImage] as? UIImage {
-            recipeImageView.image = selectedImage
-            recipeModel.image = recipeImageView.image
-            validateRecipeModel()
-        } else {
-            print("Image not found")
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
         
+        recipeImageView.image = image
+        recipeModel.image = recipeImageView.image
+        validateRecipeModel()
         picker.dismiss(animated: true, completion: nil)
     }
     

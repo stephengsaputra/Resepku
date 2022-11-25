@@ -16,11 +16,6 @@ protocol ReloadCoreDataAfterUpdateDelegate: AnyObject {
 class RecipeDetailsViewController: UIViewController {
     
     // MARK: - Properties
-    @IBOutlet weak var recipeImageView: UIImageView!
-    @IBOutlet weak var recipeTitleLabel: UILabel!
-    @IBOutlet weak var recipeIngredientsTextView: UITextView!
-    @IBOutlet weak var recipeDirectionsTextView: UITextView!
-    
     internal lazy var tableView: UITableView = {
         
         let table = UITableView(frame: .zero, style: .plain)
