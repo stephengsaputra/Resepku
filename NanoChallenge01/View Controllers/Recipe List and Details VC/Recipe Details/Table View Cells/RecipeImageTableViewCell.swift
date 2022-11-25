@@ -19,6 +19,13 @@ class RecipeImageTableViewCell: UITableViewCell {
         return image
     }()
     
+    internal lazy var recipeNameLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 28, weight: .bold)
+        label.textColor = .label
+        return label
+    }()
+    
     // MARK: - Helpers
     func configureUI() {
         
@@ -27,7 +34,15 @@ class RecipeImageTableViewCell: UITableViewCell {
         contentView.addSubview(recipeImageView)
         recipeImageView.snp.makeConstraints { make in
             make.height.equalTo(UIScreen.main.bounds.size.width)
-            make.edges.equalTo(contentView.snp.edges)
+            make.horizontalEdges.equalTo(contentView.snp.horizontalEdges)
+            make.top.equalTo(contentView.snp.top)
+        }
+        
+        contentView.addSubview(recipeNameLabel)
+        recipeNameLabel.snp.makeConstraints { make in
+            make.top.equalTo(recipeImageView.snp.bottom).offset(12)
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.bottom.equalTo(contentView.snp.bottom).inset(16)
         }
     }
 }

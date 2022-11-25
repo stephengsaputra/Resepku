@@ -26,6 +26,8 @@ class RecipeDetailsViewController: UIViewController {
         let table = UITableView(frame: .zero, style: .plain)
         
         table.register(RecipeImageTableViewCell.self, forCellReuseIdentifier: RecipeImageTableViewCell.identifier)
+        table.register(RecipeIngredientsTableViewCell.self, forCellReuseIdentifier: RecipeIngredientsTableViewCell.identifier)
+        table.register(RecipeDirectionsTableViewCell.self, forCellReuseIdentifier: RecipeDirectionsTableViewCell.identifier)
         
         table.delegate = self
         table.dataSource = self
