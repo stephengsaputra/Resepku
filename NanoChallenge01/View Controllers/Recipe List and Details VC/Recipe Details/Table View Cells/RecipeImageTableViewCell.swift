@@ -23,6 +23,7 @@ class RecipeImageTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 28, weight: .bold)
         label.textColor = .label
+        label.numberOfLines = 100
         return label
     }()
     
