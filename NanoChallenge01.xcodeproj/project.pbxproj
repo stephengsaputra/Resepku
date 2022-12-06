@@ -20,6 +20,9 @@
 		DB06B02D2817D4AA00AAD7B7 /* RecipeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06B02C2817D4AA00AAD7B7 /* RecipeViewCell.swift */; };
 		DB06B0312817E79700AAD7B7 /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06B0302817E79700AAD7B7 /* RecipeDetailsViewController.swift */; };
 		DB06B0332817E9D400AAD7B7 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06B0322817E9D400AAD7B7 /* RecipeModel.swift */; };
+		DB44DA0C293F4A5200F014BC /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB44DA09293F4A5200F014BC /* Raleway-Medium.ttf */; };
+		DB44DA0D293F4A5200F014BC /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB44DA0A293F4A5200F014BC /* Raleway-SemiBold.ttf */; };
+		DB44DA0E293F4A5200F014BC /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB44DA0B293F4A5200F014BC /* Raleway-Bold.ttf */; };
 		DB733751281C1BA9007813AB /* EditRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB733750281C1BA9007813AB /* EditRecipeViewController.swift */; };
 		DB753E3F281C6490009C9A99 /* EditRecipeFormTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB753E3E281C6490009C9A99 /* EditRecipeFormTableVC.swift */; };
 		DB9B59E3292E5AD40051F9F8 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DB9B59E2292E5AD40051F9F8 /* IQKeyboardManagerSwift */; };
@@ -45,6 +48,9 @@
 		DB06B02C2817D4AA00AAD7B7 /* RecipeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewCell.swift; sourceTree = "<group>"; };
 		DB06B0302817E79700AAD7B7 /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
 		DB06B0322817E9D400AAD7B7 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
+		DB44DA09293F4A5200F014BC /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
+		DB44DA0A293F4A5200F014BC /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
+		DB44DA0B293F4A5200F014BC /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		DB733750281C1BA9007813AB /* EditRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecipeViewController.swift; sourceTree = "<group>"; };
 		DB753E3E281C6490009C9A99 /* EditRecipeFormTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecipeFormTableVC.swift; sourceTree = "<group>"; };
 		DBBA0D3729306F0800F1C3B9 /* RecipeIngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeIngredientsTableViewCell.swift; sourceTree = "<group>"; };
@@ -108,24 +114,51 @@
 			children = (
 				DB06B0152817B54F00AAD7B7 /* AppDelegate.swift */,
 				DB06B0172817B54F00AAD7B7 /* SceneDelegate.swift */,
-				DB06B0362817EA0300AAD7B7 /* Data */,
-				DBD5FD1128186EBE002052DF /* View Controllers */,
-				DBD5FD13281872A3002052DF /* Extension */,
-				DB06B01B2817B54F00AAD7B7 /* Main.storyboard */,
-				DB06B0232817B55000AAD7B7 /* LaunchScreen.storyboard */,
+				DB06B0362817EA0300AAD7B7 /* Model */,
+				DBD5FD1128186EBE002052DF /* View */,
+				DB44DA07293F498900F014BC /* Vendor */,
 				DB06B0212817B55000AAD7B7 /* Assets.xcassets */,
 				DB06B0262817B55000AAD7B7 /* Info.plist */,
 			);
 			path = NanoChallenge01;
 			sourceTree = "<group>";
 		};
-		DB06B0362817EA0300AAD7B7 /* Data */ = {
+		DB06B0362817EA0300AAD7B7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				DB06B0322817E9D400AAD7B7 /* RecipeModel.swift */,
 				DB06B01E2817B54F00AAD7B7 /* NanoChallenge01.xcdatamodeld */,
 			);
-			path = Data;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DB44DA06293F497300F014BC /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				DB06B01B2817B54F00AAD7B7 /* Main.storyboard */,
+				DB06B0232817B55000AAD7B7 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		DB44DA07293F498900F014BC /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				DB44DA08293F499C00F014BC /* Fonts */,
+				DBD5FD13281872A3002052DF /* Extension */,
+				DB44DA06293F497300F014BC /* Storyboard */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		DB44DA08293F499C00F014BC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DB44DA0B293F4A5200F014BC /* Raleway-Bold.ttf */,
+				DB44DA09293F4A5200F014BC /* Raleway-Medium.ttf */,
+				DB44DA0A293F4A5200F014BC /* Raleway-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		DB753E3B281C6428009C9A99 /* Recipe List and Details VC */ = {
@@ -156,14 +189,14 @@
 			path = "Edit Recipe VC";
 			sourceTree = "<group>";
 		};
-		DBD5FD1128186EBE002052DF /* View Controllers */ = {
+		DBD5FD1128186EBE002052DF /* View */ = {
 			isa = PBXGroup;
 			children = (
 				DB753E3B281C6428009C9A99 /* Recipe List and Details VC */,
 				DB753E3C281C643E009C9A99 /* Add Recipe VC */,
 				DB753E3D281C644F009C9A99 /* Edit Recipe VC */,
 			);
-			path = "View Controllers";
+			path = View;
 			sourceTree = "<group>";
 		};
 		DBD5FD13281872A3002052DF /* Extension */ = {
@@ -241,8 +274,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB06B0252817B55000AAD7B7 /* LaunchScreen.storyboard in Resources */,
+				DB44DA0E293F4A5200F014BC /* Raleway-Bold.ttf in Resources */,
+				DB44DA0C293F4A5200F014BC /* Raleway-Medium.ttf in Resources */,
 				DB06B0222817B55000AAD7B7 /* Assets.xcassets in Resources */,
 				DB06B01D2817B54F00AAD7B7 /* Main.storyboard in Resources */,
+				DB44DA0D293F4A5200F014BC /* Raleway-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +455,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NanoChallenge01/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Resepku;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Resepku uses the camera to take pictures of your dishes. Your photos won't be shared to the Internet";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Resepku uses your photos to create your private recipes. Your photos won't be shared to the Internet.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -455,6 +492,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NanoChallenge01/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Resepku;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Resepku uses the camera to take pictures of your dishes. Your photos won't be shared to the Internet";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Resepku uses your photos to create your private recipes. Your photos won't be shared to the Internet.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
