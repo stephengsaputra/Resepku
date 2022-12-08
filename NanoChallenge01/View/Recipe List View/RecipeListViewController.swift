@@ -43,7 +43,7 @@ class RecipeListViewController: UIViewController {
         search.delegate = self
         search.searchBar.delegate = self
         search.searchBar.placeholder = "Search for your recipe"
-        search.searchBar.tintColor = UIColor(named: "yellow")
+        search.searchBar.tintColor = UIColor.primaryColor
         return search
     }()
     
@@ -107,6 +107,13 @@ class RecipeListViewController: UIViewController {
         
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.largeTitleTextAttributes = [
+            .font: UIFont.largeTitle()
+        ]
+        navBarAppearance.titleTextAttributes = [
+            .font: UIFont.navigationItemButton()
+        ]
+        
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         
         navigationController?.navigationBar.isTranslucent = true
@@ -125,10 +132,11 @@ class RecipeListViewController: UIViewController {
             action: #selector(handleTap)
         )
         let navItemAttribute = [
-            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16)
+            NSAttributedString.Key.font: UIFont.navigationItemButton()
         ]
         rightBarButtonItem.setTitleTextAttributes(navItemAttribute, for: .normal)
-        rightBarButtonItem.tintColor = UIColor(named: "main")
+        rightBarButtonItem.setTitleTextAttributes(navItemAttribute, for: .highlighted)
+        rightBarButtonItem.tintColor = UIColor.primaryColor
         
         navigationItem.rightBarButtonItem = rightBarButtonItem
     }
@@ -155,10 +163,6 @@ extension RecipeListViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.configureUI()
         cell.recipeImageView.image = UIImage(data: recipes?[indexPath.row].image ?? Data())
         cell.recipeNameLabel.text = recipes?[indexPath.row].title
-        
-        cell.layer.shadowColor = UIColor.systemGray5.cgColor
-        cell.layer.shadowOpacity = 0.4
-        cell.layer.shadowRadius = 28
         
         return cell
     }

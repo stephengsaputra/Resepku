@@ -15,14 +15,14 @@ class RecipeIngredientsTableViewCell: UITableViewCell {
     // MARK: - Properties
     internal lazy var recipeIngredientsHeaderLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        label.font = UIFont.heading2()
         label.textColor = .label
         return label
     }()
     
     internal lazy var recipeIngredientsLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        label.font = UIFont.bodyText()
         label.textColor = .label
         label.numberOfLines = 0
         return label
@@ -36,13 +36,13 @@ class RecipeIngredientsTableViewCell: UITableViewCell {
         contentView.addSubview(recipeIngredientsHeaderLabel)
         recipeIngredientsHeaderLabel.snp.makeConstraints { make in
             make.top.equalTo(contentView.snp.top)
-            make.leading.trailing.equalToSuperview().inset(20)
+            make.leading.trailing.equalToSuperview().inset(16)
         }
         
         contentView.addSubview(recipeIngredientsLabel)
         recipeIngredientsLabel.snp.makeConstraints { make in
-            make.top.equalTo(recipeIngredientsHeaderLabel.snp.bottom).offset(12)
-            make.leading.trailing.equalToSuperview().inset(20)
+            make.top.equalTo(recipeIngredientsHeaderLabel.snp.bottom).offset(6)
+            make.leading.trailing.equalToSuperview().inset(16)
             make.bottom.equalTo(contentView.snp.bottom).inset(16)
         }
     }
