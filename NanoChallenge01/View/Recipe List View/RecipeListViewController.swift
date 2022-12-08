@@ -73,7 +73,7 @@ class RecipeListViewController: UIViewController {
     // MARK: - Selectors
     @objc func handleTap() {
         
-        let vc = AddRecipeViewController()
+        let vc = AddRecipeVC()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 

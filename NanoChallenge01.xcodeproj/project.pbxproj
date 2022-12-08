@@ -27,6 +27,7 @@
 		DB6A28A62941DB4F0083A6C1 /* UIFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6A28A32941DB4F0083A6C1 /* UIFontExtensions.swift */; };
 		DB6A28A82941DB4F0083A6C1 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6A28A52941DB4F0083A6C1 /* UIColorExtensions.swift */; };
 		DB6A28AB2941E4350083A6C1 /* AddRecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6A28AA2941E4350083A6C1 /* AddRecipeVC.swift */; };
+		DB6A28AE2941E84F0083A6C1 /* AddRecipeNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6A28AD2941E84F0083A6C1 /* AddRecipeNameTableViewCell.swift */; };
 		DB733751281C1BA9007813AB /* EditRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB733750281C1BA9007813AB /* EditRecipeViewController.swift */; };
 		DB753E3F281C6490009C9A99 /* EditRecipeFormTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB753E3E281C6490009C9A99 /* EditRecipeFormTableVC.swift */; };
 		DB9B59E3292E5AD40051F9F8 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DB9B59E2292E5AD40051F9F8 /* IQKeyboardManagerSwift */; };
@@ -59,6 +60,7 @@
 		DB6A28A32941DB4F0083A6C1 /* UIFontExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
 		DB6A28A52941DB4F0083A6C1 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		DB6A28AA2941E4350083A6C1 /* AddRecipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeVC.swift; sourceTree = "<group>"; };
+		DB6A28AD2941E84F0083A6C1 /* AddRecipeNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeNameTableViewCell.swift; sourceTree = "<group>"; };
 		DB733750281C1BA9007813AB /* EditRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecipeViewController.swift; sourceTree = "<group>"; };
 		DB753E3E281C6490009C9A99 /* EditRecipeFormTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecipeFormTableVC.swift; sourceTree = "<group>"; };
 		DBBA0D3729306F0800F1C3B9 /* RecipeIngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeIngredientsTableViewCell.swift; sourceTree = "<group>"; };
@@ -178,6 +180,14 @@
 			path = "Recipe Detail View";
 			sourceTree = "<group>";
 		};
+		DB6A28AC2941E8160083A6C1 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DB6A28AD2941E84F0083A6C1 /* AddRecipeNameTableViewCell.swift */,
+			);
+			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
 		DB753E3B281C6428009C9A99 /* Recipe List View */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +203,7 @@
 				DBEB75722818282B00D0E481 /* AddRecipeViewController.swift */,
 				DBEB75742818287900D0E481 /* AddRecipeFormTableVC.swift */,
 				DB6A28AA2941E4350083A6C1 /* AddRecipeVC.swift */,
+				DB6A28AC2941E8160083A6C1 /* Table View Cells */,
 			);
 			path = "Add Recipe VC";
 			sourceTree = "<group>";
@@ -327,6 +338,7 @@
 				DB06B0182817B54F00AAD7B7 /* SceneDelegate.swift in Sources */,
 				DB04E1A02930633A005FBF87 /* RecipeDetailsVCDelegates.swift in Sources */,
 				DB06B02D2817D4AA00AAD7B7 /* RecipeViewCell.swift in Sources */,
+				DB6A28AE2941E84F0083A6C1 /* AddRecipeNameTableViewCell.swift in Sources */,
 				DB6A28AB2941E4350083A6C1 /* AddRecipeVC.swift in Sources */,
 				DB6A28A82941DB4F0083A6C1 /* UIColorExtensions.swift in Sources */,
 			);
