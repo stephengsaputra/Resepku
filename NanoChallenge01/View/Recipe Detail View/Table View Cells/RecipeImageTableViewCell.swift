@@ -21,7 +21,7 @@ class RecipeImageTableViewCell: UITableViewCell {
     
     internal lazy var recipeNameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 28, weight: .bold)
+        label.font = UIFont.heading1()
         label.textColor = .label
         label.numberOfLines = 100
         return label
@@ -41,8 +41,8 @@ class RecipeImageTableViewCell: UITableViewCell {
         
         contentView.addSubview(recipeNameLabel)
         recipeNameLabel.snp.makeConstraints { make in
-            make.top.equalTo(recipeImageView.snp.bottom).offset(12)
-            make.leading.trailing.equalToSuperview().inset(20)
+            make.top.equalTo(recipeImageView.snp.bottom).offset(16)
+            make.leading.trailing.equalToSuperview().inset(16)
             make.bottom.equalTo(contentView.snp.bottom).inset(16)
         }
     }

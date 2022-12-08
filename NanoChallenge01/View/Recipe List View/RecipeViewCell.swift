@@ -75,10 +75,9 @@ class recipeViewCell: UICollectionViewCell {
     
     internal lazy var recipeNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Test 1 Test 1 Test 1 Test 1 Test 1 Test 1 Test 1 Test 1 Test 1 Test 1 Test 1 Test 1 "
         label.numberOfLines = 2
         label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 15)
+        label.font = UIFont.cellContent()
         label.sizeToFit()
         return label
     }()
@@ -100,13 +99,28 @@ class recipeViewCell: UICollectionViewCell {
             make.bottom.equalTo(contentView.snp.bottom).inset(10)
         }
         
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = UIColor.cellBG
         
         contentView.clipsToBounds = true
         
         contentView.layer.cornerRadius = 12
         
-        contentView.layer.borderColor = UIColor.systemGray6.cgColor
+        contentView.layer.borderColor = UIColor.cellBorder?.cgColor
         contentView.layer.borderWidth = 1.5
+        
+        contentView.layer.shadowColor = UIColor.dropShadow?.cgColor
+        contentView.layer.shadowOffset = CGSize(width: 0, height: 8)
+        contentView.layer.shadowRadius = 16
+    }
+    
+    private func updateColors() {
+        self.contentView.layer.borderColor = UIColor.cellBorder?.cgColor
+        self.contentView.layer.shadowColor = UIColor.dropShadow?.cgColor
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        self.updateColors()
+        self.setNeedsDisplay()
     }
 }

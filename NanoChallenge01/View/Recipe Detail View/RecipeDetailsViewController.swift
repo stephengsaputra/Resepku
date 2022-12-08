@@ -83,14 +83,22 @@ class RecipeDetailsViewController: UIViewController {
     func configureUI() {
         
         navigationItem.largeTitleDisplayMode = .never
-        navigationController?.navigationBar.tintColor = UIColor(named: "main")
+        navigationController?.navigationBar.tintColor = UIColor.primaryColor
         
-        let editBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(toEditRecipeView))
-        self.navigationItem.rightBarButtonItem  = editBarButtonItem
+        let editBarButtonItem = UIBarButtonItem(
+            title: "Edit Recipe",
+            style: .plain,
+            target: self,
+            action: #selector(toEditRecipeView)
+        )
+        let navItemAttribute = [
+            NSAttributedString.Key.font: UIFont.navigationItemButton()
+        ]
+        editBarButtonItem.setTitleTextAttributes(navItemAttribute, for: .normal)
+        editBarButtonItem.setTitleTextAttributes(navItemAttribute, for: .highlighted)
+        editBarButtonItem.tintColor = UIColor.primaryColor
+        navigationItem.rightBarButtonItem  = editBarButtonItem
         
-//        recipeTitleLabel.text = recipeTitle
-//        recipeIngredientsTextView.text = recipeIngredients
-//        recipeDirectionsTextView.text = recipeDirections
         
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
