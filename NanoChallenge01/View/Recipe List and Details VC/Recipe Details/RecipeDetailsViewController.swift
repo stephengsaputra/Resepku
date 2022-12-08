@@ -83,6 +83,7 @@ class RecipeDetailsViewController: UIViewController {
     func configureUI() {
         
         navigationItem.largeTitleDisplayMode = .never
+        navigationController?.navigationBar.tintColor = UIColor(named: "main")
         
         let editBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(toEditRecipeView))
         self.navigationItem.rightBarButtonItem  = editBarButtonItem
