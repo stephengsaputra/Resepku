@@ -23,6 +23,21 @@ class RecipeListViewController: UIViewController {
         return layout
     }()
     
+    internal lazy var search: UISearchController = {
+        let search = UISearchController(searchResultsController: nil)
+        search.delegate = self
+        search.searchBar.delegate = self
+        search.searchBar.placeholder = "Search for your recipe"
+        search.searchBar.tintColor = UIColor.primaryColor
+        return search
+    }()
+    
+    internal lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        return refreshControl
+    }()
+    
     internal lazy var recipeCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(recipeViewCell.self, forCellWithReuseIdentifier: recipeViewCell.identifier)
@@ -35,16 +50,9 @@ class RecipeListViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        collectionView.refreshControl = refreshControl
+        
         return collectionView
-    }()
-    
-    internal lazy var search: UISearchController = {
-        let search = UISearchController(searchResultsController: nil)
-        search.delegate = self
-        search.searchBar.delegate = self
-        search.searchBar.placeholder = "Search for your recipe"
-        search.searchBar.tintColor = UIColor.primaryColor
-        return search
     }()
     
     var rowSelected: Int?
@@ -57,16 +65,9 @@ class RecipeListViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        fetchData()
         configureNavigation()
         configureUI()
-    
-        navigationController?.navigationBar.prefersLargeTitles = true
-        
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        self.recipeCollectionView.refreshControl = refreshControl
-        
-        fetchData()
     }
     
     // MARK: - Selectors

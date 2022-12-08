@@ -86,7 +86,7 @@ class RecipeDetailsViewController: UIViewController {
         navigationController?.navigationBar.tintColor = UIColor.primaryColor
         
         let editBarButtonItem = UIBarButtonItem(
-            title: "Edit",
+            title: "Edit Recipe",
             style: .plain,
             target: self,
             action: #selector(toEditRecipeView)
