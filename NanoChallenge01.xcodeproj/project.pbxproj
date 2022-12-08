@@ -23,6 +23,7 @@
 		DB44DA0C293F4A5200F014BC /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB44DA09293F4A5200F014BC /* Raleway-Medium.ttf */; };
 		DB44DA0D293F4A5200F014BC /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB44DA0A293F4A5200F014BC /* Raleway-SemiBold.ttf */; };
 		DB44DA0E293F4A5200F014BC /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB44DA0B293F4A5200F014BC /* Raleway-Bold.ttf */; };
+		DB6A28A12941D45B0083A6C1 /* StaticVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6A28A02941D45B0083A6C1 /* StaticVariables.swift */; };
 		DB733751281C1BA9007813AB /* EditRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB733750281C1BA9007813AB /* EditRecipeViewController.swift */; };
 		DB753E3F281C6490009C9A99 /* EditRecipeFormTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB753E3E281C6490009C9A99 /* EditRecipeFormTableVC.swift */; };
 		DB9B59E3292E5AD40051F9F8 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DB9B59E2292E5AD40051F9F8 /* IQKeyboardManagerSwift */; };
@@ -51,6 +52,7 @@
 		DB44DA09293F4A5200F014BC /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
 		DB44DA0A293F4A5200F014BC /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
 		DB44DA0B293F4A5200F014BC /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
+		DB6A28A02941D45B0083A6C1 /* StaticVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticVariables.swift; sourceTree = "<group>"; };
 		DB733750281C1BA9007813AB /* EditRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecipeViewController.swift; sourceTree = "<group>"; };
 		DB753E3E281C6490009C9A99 /* EditRecipeFormTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecipeFormTableVC.swift; sourceTree = "<group>"; };
 		DBBA0D3729306F0800F1C3B9 /* RecipeIngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeIngredientsTableViewCell.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				DBD5FD14281872BE002052DF /* UITextView.swift */,
+				DB6A28A02941D45B0083A6C1 /* StaticVariables.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				DB06B0202817B54F00AAD7B7 /* NanoChallenge01.xcdatamodeld in Sources */,
 				DBD5FD15281872BE002052DF /* UITextView.swift in Sources */,
 				DBBA0D3A293073E300F1C3B9 /* RecipeDirectionsTableViewCell.swift in Sources */,
+				DB6A28A12941D45B0083A6C1 /* StaticVariables.swift in Sources */,
 				DB04E1A3293063D7005FBF87 /* RecipeImageTableViewCell.swift in Sources */,
 				DB06B0312817E79700AAD7B7 /* RecipeDetailsViewController.swift in Sources */,
 				DB06B0332817E9D400AAD7B7 /* RecipeModel.swift in Sources */,
@@ -459,12 +463,12 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "Resepku uses the camera to take pictures of your dishes. Your photos won't be shared to the Internet";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Resepku uses your photos to create your private recipes. Your photos won't be shared to the Internet.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -496,12 +500,12 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "Resepku uses the camera to take pictures of your dishes. Your photos won't be shared to the Internet";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Resepku uses your photos to create your private recipes. Your photos won't be shared to the Internet.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
