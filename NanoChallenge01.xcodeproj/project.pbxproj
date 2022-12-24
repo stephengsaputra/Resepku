@@ -28,6 +28,7 @@
 		DB6A28A82941DB4F0083A6C1 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6A28A52941DB4F0083A6C1 /* UIColorExtensions.swift */; };
 		DB6A28AB2941E4350083A6C1 /* AddRecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6A28AA2941E4350083A6C1 /* AddRecipeVC.swift */; };
 		DB6A28AE2941E84F0083A6C1 /* AddRecipeNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6A28AD2941E84F0083A6C1 /* AddRecipeNameTableViewCell.swift */; };
+		DB6A28B02941EB250083A6C1 /* AddRecipeImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6A28AF2941EB250083A6C1 /* AddRecipeImageTableViewCell.swift */; };
 		DB733751281C1BA9007813AB /* EditRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB733750281C1BA9007813AB /* EditRecipeViewController.swift */; };
 		DB753E3F281C6490009C9A99 /* EditRecipeFormTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB753E3E281C6490009C9A99 /* EditRecipeFormTableVC.swift */; };
 		DB9B59E3292E5AD40051F9F8 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DB9B59E2292E5AD40051F9F8 /* IQKeyboardManagerSwift */; };
@@ -36,6 +37,10 @@
 		DBD5FD15281872BE002052DF /* UITextViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD5FD14281872BE002052DF /* UITextViewExtensions.swift */; };
 		DBEB75732818282B00D0E481 /* AddRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEB75722818282B00D0E481 /* AddRecipeViewController.swift */; };
 		DBEB75752818287900D0E481 /* AddRecipeFormTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEB75742818287900D0E481 /* AddRecipeFormTableVC.swift */; };
+		DBF589A8294226E9008881A7 /* AddRecipeVC + TableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF589A7294226E9008881A7 /* AddRecipeVC + TableViewExtensions.swift */; };
+		DBF589AA29422710008881A7 /* AddRecipeVC + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF589A929422710008881A7 /* AddRecipeVC + Extensions.swift */; };
+		DBF589AC29422778008881A7 /* AddRecipeIngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF589AB29422778008881A7 /* AddRecipeIngredientsTableViewCell.swift */; };
+		DBF589AE29422934008881A7 /* AddRecipeDirectionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF589AD29422934008881A7 /* AddRecipeDirectionsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +66,7 @@
 		DB6A28A52941DB4F0083A6C1 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		DB6A28AA2941E4350083A6C1 /* AddRecipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeVC.swift; sourceTree = "<group>"; };
 		DB6A28AD2941E84F0083A6C1 /* AddRecipeNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeNameTableViewCell.swift; sourceTree = "<group>"; };
+		DB6A28AF2941EB250083A6C1 /* AddRecipeImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeImageTableViewCell.swift; sourceTree = "<group>"; };
 		DB733750281C1BA9007813AB /* EditRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecipeViewController.swift; sourceTree = "<group>"; };
 		DB753E3E281C6490009C9A99 /* EditRecipeFormTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecipeFormTableVC.swift; sourceTree = "<group>"; };
 		DBBA0D3729306F0800F1C3B9 /* RecipeIngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeIngredientsTableViewCell.swift; sourceTree = "<group>"; };
@@ -68,6 +74,10 @@
 		DBD5FD14281872BE002052DF /* UITextViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExtensions.swift; sourceTree = "<group>"; };
 		DBEB75722818282B00D0E481 /* AddRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeViewController.swift; sourceTree = "<group>"; };
 		DBEB75742818287900D0E481 /* AddRecipeFormTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeFormTableVC.swift; sourceTree = "<group>"; };
+		DBF589A7294226E9008881A7 /* AddRecipeVC + TableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddRecipeVC + TableViewExtensions.swift"; sourceTree = "<group>"; };
+		DBF589A929422710008881A7 /* AddRecipeVC + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddRecipeVC + Extensions.swift"; sourceTree = "<group>"; };
+		DBF589AB29422778008881A7 /* AddRecipeIngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeIngredientsTableViewCell.swift; sourceTree = "<group>"; };
+		DBF589AD29422934008881A7 /* AddRecipeDirectionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeDirectionsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +194,9 @@
 			isa = PBXGroup;
 			children = (
 				DB6A28AD2941E84F0083A6C1 /* AddRecipeNameTableViewCell.swift */,
+				DB6A28AF2941EB250083A6C1 /* AddRecipeImageTableViewCell.swift */,
+				DBF589AB29422778008881A7 /* AddRecipeIngredientsTableViewCell.swift */,
+				DBF589AD29422934008881A7 /* AddRecipeDirectionsTableViewCell.swift */,
 			);
 			path = "Table View Cells";
 			sourceTree = "<group>";
@@ -203,6 +216,8 @@
 				DBEB75722818282B00D0E481 /* AddRecipeViewController.swift */,
 				DBEB75742818287900D0E481 /* AddRecipeFormTableVC.swift */,
 				DB6A28AA2941E4350083A6C1 /* AddRecipeVC.swift */,
+				DBF589A7294226E9008881A7 /* AddRecipeVC + TableViewExtensions.swift */,
+				DBF589A929422710008881A7 /* AddRecipeVC + Extensions.swift */,
 				DB6A28AC2941E8160083A6C1 /* Table View Cells */,
 			);
 			path = "Add Recipe VC";
@@ -323,7 +338,9 @@
 				DBEB75732818282B00D0E481 /* AddRecipeViewController.swift in Sources */,
 				DB753E3F281C6490009C9A99 /* EditRecipeFormTableVC.swift in Sources */,
 				DBEB75752818287900D0E481 /* AddRecipeFormTableVC.swift in Sources */,
+				DB6A28B02941EB250083A6C1 /* AddRecipeImageTableViewCell.swift in Sources */,
 				DB06B0202817B54F00AAD7B7 /* NanoChallenge01.xcdatamodeld in Sources */,
+				DBF589AE29422934008881A7 /* AddRecipeDirectionsTableViewCell.swift in Sources */,
 				DBD5FD15281872BE002052DF /* UITextViewExtensions.swift in Sources */,
 				DBBA0D3A293073E300F1C3B9 /* RecipeDirectionsTableViewCell.swift in Sources */,
 				DB6A28A12941D45B0083A6C1 /* StaticVariables.swift in Sources */,
@@ -331,7 +348,9 @@
 				DB6A28A62941DB4F0083A6C1 /* UIFontExtensions.swift in Sources */,
 				DB06B0312817E79700AAD7B7 /* RecipeDetailsViewController.swift in Sources */,
 				DB06B0332817E9D400AAD7B7 /* RecipeModel.swift in Sources */,
+				DBF589A8294226E9008881A7 /* AddRecipeVC + TableViewExtensions.swift in Sources */,
 				DB06B01A2817B54F00AAD7B7 /* RecipeListViewController.swift in Sources */,
+				DBF589AC29422778008881A7 /* AddRecipeIngredientsTableViewCell.swift in Sources */,
 				DB733751281C1BA9007813AB /* EditRecipeViewController.swift in Sources */,
 				DB06B0162817B54F00AAD7B7 /* AppDelegate.swift in Sources */,
 				DBBA0D3829306F0800F1C3B9 /* RecipeIngredientsTableViewCell.swift in Sources */,
@@ -340,6 +359,7 @@
 				DB06B02D2817D4AA00AAD7B7 /* RecipeViewCell.swift in Sources */,
 				DB6A28AE2941E84F0083A6C1 /* AddRecipeNameTableViewCell.swift in Sources */,
 				DB6A28AB2941E4350083A6C1 /* AddRecipeVC.swift in Sources */,
+				DBF589AA29422710008881A7 /* AddRecipeVC + Extensions.swift in Sources */,
 				DB6A28A82941DB4F0083A6C1 /* UIColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

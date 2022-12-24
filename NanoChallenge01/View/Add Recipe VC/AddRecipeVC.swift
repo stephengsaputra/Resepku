@@ -8,6 +8,11 @@
 import UIKit
 import SnapKit
 
+protocol AddRecipeVCDelegate: AnyObject {
+    
+    func showCameraPicker()
+}
+
 class AddRecipeVC: UIViewController {
 
     // MARK: - Properties
@@ -16,6 +21,9 @@ class AddRecipeVC: UIViewController {
         let table = UITableView(frame: .zero, style: .plain)
         
         table.register(AddRecipeNameTableViewCell.self, forCellReuseIdentifier: AddRecipeNameTableViewCell.identifier)
+        table.register(AddRecipeImageTableViewCell.self, forCellReuseIdentifier: AddRecipeImageTableViewCell.identifier)
+        table.register(AddRecipeIngredientsTableViewCell.self, forCellReuseIdentifier: AddRecipeIngredientsTableViewCell.identifier)
+        table.register(AddRecipeDirectionsTableViewCell.self, forCellReuseIdentifier: AddRecipeDirectionsTableViewCell.identifier)
         
         table.delegate = self
         table.dataSource = self
@@ -92,10 +100,12 @@ class AddRecipeVC: UIViewController {
         )
         rightBarButtonItem.setTitleTextAttributes(navItemAttribute, for: .normal)
         rightBarButtonItem.setTitleTextAttributes(navItemAttribute, for: .highlighted)
+        rightBarButtonItem.setTitleTextAttributes(navItemAttribute, for: .disabled)
         rightBarButtonItem.tintColor = UIColor.primaryColor
         
         navigationItem.leftBarButtonItem = leftBarButtonItem
         navigationItem.rightBarButtonItem = rightBarButtonItem
+        navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
     func configureUI() {
@@ -106,20 +116,5 @@ class AddRecipeVC: UIViewController {
         formTable.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-    }
-}
-
-extension AddRecipeVC: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = formTable.dequeueReusableCell(withIdentifier: AddRecipeNameTableViewCell.identifier) as! AddRecipeNameTableViewCell
-        cell.configureUI()
-        
-        return cell
     }
 }
