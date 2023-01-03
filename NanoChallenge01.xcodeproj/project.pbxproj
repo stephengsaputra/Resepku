@@ -41,6 +41,7 @@
 		DBF589AA29422710008881A7 /* AddRecipeVC + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF589A929422710008881A7 /* AddRecipeVC + Extensions.swift */; };
 		DBF589AC29422778008881A7 /* AddRecipeIngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF589AB29422778008881A7 /* AddRecipeIngredientsTableViewCell.swift */; };
 		DBF589AE29422934008881A7 /* AddRecipeDirectionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF589AD29422934008881A7 /* AddRecipeDirectionsTableViewCell.swift */; };
+		DBFA7DEC2964B7D6007A62C7 /* RecipeListVC + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFA7DEB2964B7D6007A62C7 /* RecipeListVC + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		DBF589A929422710008881A7 /* AddRecipeVC + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddRecipeVC + Extensions.swift"; sourceTree = "<group>"; };
 		DBF589AB29422778008881A7 /* AddRecipeIngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeIngredientsTableViewCell.swift; sourceTree = "<group>"; };
 		DBF589AD29422934008881A7 /* AddRecipeDirectionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeDirectionsTableViewCell.swift; sourceTree = "<group>"; };
+		DBFA7DEB2964B7D6007A62C7 /* RecipeListVC + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipeListVC + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				DB06B0192817B54F00AAD7B7 /* RecipeListViewController.swift */,
+				DBFA7DEB2964B7D6007A62C7 /* RecipeListVC + Extensions.swift */,
 				DB06B02C2817D4AA00AAD7B7 /* RecipeViewCell.swift */,
 			);
 			path = "Recipe List View";
@@ -345,6 +348,7 @@
 				DBBA0D3A293073E300F1C3B9 /* RecipeDirectionsTableViewCell.swift in Sources */,
 				DB6A28A12941D45B0083A6C1 /* StaticVariables.swift in Sources */,
 				DB04E1A3293063D7005FBF87 /* RecipeImageTableViewCell.swift in Sources */,
+				DBFA7DEC2964B7D6007A62C7 /* RecipeListVC + Extensions.swift in Sources */,
 				DB6A28A62941DB4F0083A6C1 /* UIFontExtensions.swift in Sources */,
 				DB06B0312817E79700AAD7B7 /* RecipeDetailsViewController.swift in Sources */,
 				DB06B0332817E9D400AAD7B7 /* RecipeModel.swift in Sources */,
