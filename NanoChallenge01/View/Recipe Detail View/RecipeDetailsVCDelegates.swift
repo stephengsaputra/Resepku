@@ -28,32 +28,30 @@ extension RecipeDetailsViewController: UITableViewDelegate, UITableViewDataSourc
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: RecipeImageTableViewCell.identifier) as! RecipeImageTableViewCell
-            cell.recipeImageView.image = recipeImage
-            cell.recipeNameLabel.text = recipeTitle
-            cell.configureUI()
-            cell.selectionStyle = .none
+        switch indexPath.row {
+            case 0:
+                let cell = tableView.dequeueReusableCell(withIdentifier: RecipeImageTableViewCell.identifier) as! RecipeImageTableViewCell
+                cell.recipeImageView.image = recipeImage
+                cell.recipeNameLabel.text = recipeTitle
+                cell.configureUI()
+                cell.selectionStyle = .none
+                return cell
             
-            return cell
-        }
-        
-        if indexPath.row == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: RecipeIngredientsTableViewCell.identifier) as! RecipeIngredientsTableViewCell
-            cell.recipeIngredientsHeaderLabel.text = "Ingredients"
-            cell.recipeIngredientsLabel.text = recipeIngredients
-            cell.configureUI()
-            cell.selectionStyle = .none
+            case 1:
+                let cell = tableView.dequeueReusableCell(withIdentifier: RecipeIngredientsTableViewCell.identifier) as! RecipeIngredientsTableViewCell
+                cell.recipeIngredientsHeaderLabel.text = "Ingredients"
+                cell.recipeIngredientsLabel.text = recipeIngredients
+                cell.configureUI()
+                cell.selectionStyle = .none
+                return cell
             
-            return cell
+            default:
+                let cell = tableView.dequeueReusableCell(withIdentifier: RecipeDirectionsTableViewCell.identifier) as! RecipeDirectionsTableViewCell
+                cell.recipeDirectionsHeaderLabel.text = "Directions"
+                cell.recipeDirectionsLabel.text = recipeDirections
+                cell.configureUI()
+                cell.selectionStyle = .none
+                return cell
         }
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: RecipeDirectionsTableViewCell.identifier) as! RecipeDirectionsTableViewCell
-        cell.recipeDirectionsHeaderLabel.text = "Directions"
-        cell.recipeDirectionsLabel.text = recipeDirections
-        cell.configureUI()
-        cell.selectionStyle = .none
-        
-        return cell
     }
 }

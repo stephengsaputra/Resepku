@@ -10,6 +10,7 @@ import UIKit
 extension UIColor {
     
     static let primaryColor = UIColor.init(named: "primaryColor")
+    static let destructive = UIColor.init(named: "destructive")
     
     static let cellBG = UIColor.init(named: "cellBG")
     static let cellBorder = UIColor.init(named: "cellBorder")

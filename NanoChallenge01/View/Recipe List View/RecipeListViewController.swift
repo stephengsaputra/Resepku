@@ -73,7 +73,7 @@ class RecipeListViewController: UIViewController {
     // MARK: - Selectors
     @objc func handleTap() {
         
-        let vc = AddRecipeViewController()
+        let vc = AddRecipeVC()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -148,73 +148,5 @@ class RecipeListViewController: UIViewController {
         recipeCollectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-    }
-}
-
-extension RecipeListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return recipes?.count ?? 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = recipeCollectionView.dequeueReusableCell(withReuseIdentifier: recipeViewCell.identifier, for: indexPath) as! recipeViewCell
-        
-        cell.configureUI()
-        cell.recipeImageView.image = UIImage(data: recipes?[indexPath.row].image ?? Data())
-        cell.recipeNameLabel.text = recipes?[indexPath.row].title
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        rowSelected = indexPath.row
-        performSegue(withIdentifier: "toRecipeDetails", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if let selectedRow = rowSelected {
-            if let destination = segue.destination as? RecipeDetailsViewController {
-                destination.recipeID = recipes?[selectedRow].id ?? 0
-                destination.recipeTitle = recipes?[selectedRow].title ?? ""
-                destination.recipeImage = UIImage(data: recipes?[selectedRow].image ?? Data())
-                destination.recipeIngredients = recipes?[selectedRow].ingredients ?? ""
-                destination.recipeDirections = recipes?[selectedRow].directions ?? ""
-            }
-        }
-        
-        if segue.identifier == "toFormSegue" {
-            if let vc = segue.destination as? AddRecipeViewController {
-                vc.delegate = self
-            }
-        } else if segue.identifier == "toRecipeDetails" {
-            if let vc = segue.destination as? RecipeDetailsViewController {
-                vc.delegate = self
-            }
-        }
-    }
-}
-
-extension RecipeListViewController: UISearchControllerDelegate, UISearchBarDelegate {
-    
-    
-}
-
-extension RecipeListViewController: ReloadCoreDataDelegate {
-    
-    func reloadData() {
-        fetchData()
-        self.recipeCollectionView.reloadData()
-    }
-}
-
-extension RecipeListViewController: ReloadCoreDataAfterUpdateDelegate {
-    
-    func reloadTable() {
-        fetchData()
-        self.recipeCollectionView.reloadData()
     }
 }

@@ -1,29 +1,24 @@
 //
-//  AddRecipeVC.swift
+//  EditRecipeVC.swift
 //  NanoChallenge01
 //
-//  Created by Stephen Giovanni Saputra on 08/12/22.
+//  Created by Stephen Giovanni Saputra on 14/01/23.
 //
 
 import UIKit
 import SnapKit
 
-protocol AddRecipeVCDelegate: AnyObject {
-    
-    func showCameraPicker()
-}
-
-class AddRecipeVC: UIViewController {
+class EditRecipeVC: UIViewController {
 
     // MARK: - Properties
     internal lazy var formTable: UITableView = {
         
         let table = UITableView(frame: .zero, style: .plain)
         
-        table.register(AddRecipeNameTableViewCell.self, forCellReuseIdentifier: AddRecipeNameTableViewCell.identifier)
-        table.register(AddRecipeImageTableViewCell.self, forCellReuseIdentifier: AddRecipeImageTableViewCell.identifier)
-        table.register(AddRecipeIngredientsTableViewCell.self, forCellReuseIdentifier: AddRecipeIngredientsTableViewCell.identifier)
-        table.register(AddRecipeDirectionsTableViewCell.self, forCellReuseIdentifier: AddRecipeDirectionsTableViewCell.identifier)
+        table.register(EditRecipeNameTableViewCell.self, forCellReuseIdentifier: EditRecipeNameTableViewCell.identifier)
+        table.register(EditRecipeImageTableViewCell.self, forCellReuseIdentifier: EditRecipeImageTableViewCell.identifier)
+        table.register(EditRecipeIngredientsTableViewCell.self, forCellReuseIdentifier: EditRecipeIngredientsTableViewCell.identifier)
+        table.register(EditRecipeDirectionsTableViewCell.self, forCellReuseIdentifier: EditRecipeDirectionsTableViewCell.identifier)
         
         table.delegate = self
         table.dataSource = self
